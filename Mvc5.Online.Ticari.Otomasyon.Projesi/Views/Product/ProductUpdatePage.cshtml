@@ -1,0 +1,49 @@
+﻿@model EntityLayer.Concrete.Product
+@{
+    ViewBag.Title = "ProductUpdatePage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Ürün Güncelleme Sayfası</h2>
+@using (Html.BeginForm("ProductUpdatePage", "Product", FormMethod.Post))
+{
+<div class="form-group">
+    <br />
+   
+    @Html.HiddenFor(x => x.ProductId)
+    <br />
+    @Html.Label("Ürün Adı ")
+    @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("Marka ")
+    @Html.TextBoxFor(x => x.Brand, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("Stok ")
+    @Html.TextBoxFor(x => x.UnitInStok, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("Alış Fiyatı ")
+    @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Satış Fiyatı ")
+    @Html.TextBoxFor(x => x.SalePrice, new { @class = "form-control" })
+
+
+    <br />
+    @Html.Label("Kategori")
+    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.vic, new { @class = "form-control" })
+
+
+    <br />
+    @Html.Label("Ürün Görsel URL'si ")
+    @Html.TextBoxFor(x => x.PImage, new { @class = "form-control" })
+
+
+    <br />
+    <button class="btn btn-outline-success"><b>Güncelle</b></button>
+</div>
+}

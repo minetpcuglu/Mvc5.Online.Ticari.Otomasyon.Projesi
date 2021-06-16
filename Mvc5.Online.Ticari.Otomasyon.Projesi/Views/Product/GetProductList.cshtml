@@ -1,0 +1,53 @@
+﻿@using EntityLayer.Concrete
+@model List<Product>
+@{
+    ViewBag.Title = "GetProductList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<table class="table table-bordered">
+
+    <tr>
+
+        <th>ID</th>
+        <th>Ürün</th>
+        <th>Marka</th>
+        <th>Stok</th>
+        <th>Alış Fiyatı</th>
+        <th>Satış Fiyatı</th>
+        <th>Kategori</th>
+        <th>Görsel</th>
+   
+
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+
+<tr>
+    <th>@item.ProductId</th>
+    <th>@item.ProductName</th>
+    <th>@item.Brand</th>
+    <th>@item.UnitInStok</th>
+    <th>@item.SalePrice</th>>
+    <th>@item.UnitPrice</th>
+    <th>@item.Category.CategoryName</th>
+    <th>@item.PImage</th>
+
+    <td><a href="/Product/ProductDelete/@item.ProductId" class="btn btn-outline-danger"><b>Sil</b></a></td>
+    <td><a href="/Product/ProductUpdatePage/@item.ProductId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
+
+</tr>
+    }
+
+</table>
+<a href="/Product/ProductAdd/" class="btn btn-outline-dark"><b>Ürün Ekle</b></a>
+
+

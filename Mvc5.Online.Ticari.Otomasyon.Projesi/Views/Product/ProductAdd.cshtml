@@ -1,0 +1,59 @@
+﻿@model EntityLayer.Concrete.Product
+@{
+    ViewBag.Title = "ProductAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<br />
+<h2>Yeni Ürün Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("ProductAdd", "Product", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Ürün Adı ")
+        @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ProductName)
+        <br />
+        @Html.Label("Marka ")
+        @Html.TextBoxFor(x => x.Brand, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Brand)
+        <br />
+        @Html.Label("Stok ")
+        @Html.TextBoxFor(x => x.UnitInStok, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.UnitInStok)
+        <br />
+        @Html.Label("Alış Fiyatı ")
+        @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.UnitPrice)
+        <br />
+
+        @Html.Label("Satış Fiyatı ")
+        @Html.TextBoxFor(x => x.SalePrice, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.SalePrice)
+
+        <br />
+        @Html.Label("Kategori")
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.vic, new { @class = "form-control" })
+        @*@Html.ValidationMessageFor(x => x.Category.CategoryName)*@
+
+        @*<br />
+            @Html.Label("Durum")
+            @Html.TextBoxFor(x=>x.Status, new  {@class = "form-control"})*@
+
+        <br />
+        @Html.Label("Ürün Görsel URL'si ")
+        @Html.TextBoxFor(x => x.PImage, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.PImage)
+
+        <br />
+
+
+
+
+        <button class="btn btn-outline-success"><b>Ekle</b></button>
+    </div>
+
+}
