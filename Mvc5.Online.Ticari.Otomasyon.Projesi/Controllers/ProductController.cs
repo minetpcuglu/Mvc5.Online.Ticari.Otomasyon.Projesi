@@ -4,7 +4,6 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
-using Mvc5.Online.Ticari.Otomasyon.Projesi.VMClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -112,13 +111,8 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
             return RedirectToAction("GetProductList");
         }
 
-        public ActionResult Deneme()
-        {
-           CategoryVM vm = new CategoryVM
-            {
-                Categories =cm.GetList()
-            };
-            return View(vm);
-        }
+       
+
+      
     }
 }

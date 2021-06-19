@@ -1,0 +1,21 @@
+﻿@model EntityLayer.Concrete.Departmant
+@{
+    ViewBag.Title = "DepartmantAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Kategori Ekleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("DepartmantAdd", "Departmant", FormMethod.Post))  
+{
+    <div class="form-group">
+        @Html.Label("Departman Adı: ")
+        @Html.TextBoxFor(x => x.DepartmantName)
+        @Html.ValidationMessageFor(x=>x.DepartmantName)
+    
+    </div>
+    <br />
+    <button class="btn btn-outline-success"><b>Kaydet</b></button>
+}
+

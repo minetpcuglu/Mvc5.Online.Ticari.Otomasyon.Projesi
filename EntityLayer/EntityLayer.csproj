@@ -52,6 +52,8 @@
     <Compile Include="Concrete\Expense.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\SalesMovements.cs" />
+    <Compile Include="Dto\DepartmantDetailDto.cs" />
+    <Compile Include="Dto\IDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

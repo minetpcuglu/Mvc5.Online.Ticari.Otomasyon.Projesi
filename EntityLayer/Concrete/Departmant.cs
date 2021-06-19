@@ -15,7 +15,9 @@ namespace EntityLayer.Concrete
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string DepartmantName { get; set; }
-        
+        public bool DepartmantStatus { get; set; }
+     
+
 
         //ilişkiler
 

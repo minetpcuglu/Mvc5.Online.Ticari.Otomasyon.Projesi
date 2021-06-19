@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.Departmant
+@{
+    ViewBag.Title = "UpdateDepartmantPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<br />
+@using (Html.BeginForm("UpdateDepartmantPage", "Departmant", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+
+        @Html.HiddenFor(x => x.DepartmantId)
+        <br />
+        @Html.Label("Departman Adı ")
+        @Html.TextBoxFor(x => x.DepartmantName, new { @class = "form-control" })
+
+
+        <br />
+        <button class="btn btn-outline-success"><b>Güncelle</b></button>
+    </div>
+}
+
