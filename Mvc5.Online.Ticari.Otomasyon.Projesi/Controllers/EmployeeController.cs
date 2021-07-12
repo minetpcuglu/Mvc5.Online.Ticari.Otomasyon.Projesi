@@ -14,7 +14,8 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
         EmployeeManager EM = new EmployeeManager(new EfEmployeeDal());
         public ActionResult Index()
         {
-            return View();
+            var deger = EM.GetList();
+            return View(deger);
         }
 
         public ActionResult EmployeeByDepartmant(int id)

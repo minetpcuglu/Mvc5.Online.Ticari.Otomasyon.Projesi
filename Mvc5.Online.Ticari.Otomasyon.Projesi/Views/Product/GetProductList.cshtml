@@ -1,13 +1,13 @@
 ﻿@using EntityLayer.Concrete
 @model List<Product>
+
 @{
     ViewBag.Title = "GetProductList";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-
-
-
+<br />
+<br />
 <table class="table table-bordered">
 
     <tr>
@@ -20,31 +20,35 @@
         <th>Satış Fiyatı</th>
         <th>Kategori</th>
         <th>Görsel</th>
-   
-
         <th>Sil</th>
-        <th>Güncelle</th>
+        <th style="margin-left:15px;">Güncelle</th>
+
 
     </tr>
 
     @foreach (var item in Model)
     {
+        <tr>
 
 
-<tr>
-    <th>@item.ProductId</th>
-    <th>@item.ProductName</th>
-    <th>@item.Brand</th>
-    <th>@item.UnitInStok</th>
-    <th>@item.SalePrice</th>>
-    <th>@item.UnitPrice</th>
-    <th>@item.Category.CategoryName</th>
-    <th>@item.PImage</th>
 
-    <td><a href="/Product/ProductDelete/@item.ProductId" class="btn btn-outline-danger"><b>Sil</b></a></td>
-    <td><a href="/Product/ProductUpdatePage/@item.ProductId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
+            <th>@item.ProductId</th>
+            <th>@item.ProductName</th>
+            <th>@item.Brand</th>
+            <th>@item.UnitInStok</th>
+            <th>@item.SalePrice</th>>
+            <th>@item.UnitPrice</th>
+            <th>@item.Category.CategoryName</th>
+            <th>@item.PImage</th>
 
-</tr>
+            <td><a href="/Product/ProductDelete/@item.ProductId" class="btn btn-outline-danger"><b>Sil</b></a></td>
+            <td><a href="/Product/ProductUpdatePage/@item.ProductId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
+
+
+
+
+
+        </tr>
     }
 
 </table>

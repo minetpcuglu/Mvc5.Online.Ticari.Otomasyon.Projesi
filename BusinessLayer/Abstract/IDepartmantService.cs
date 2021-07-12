@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    interface IDepartmantService
+   public interface IDepartmantService
     {
         void DepartmantDelete(Departmant departmant);
         void DepartmantUpdate(Departmant departmant);

@@ -274,6 +274,7 @@
     <Content Include="Views\Departmant\UpdateDepartmantPage.cshtml" />
     <Content Include="Views\Employee\EmployeeByDepartmant.cshtml" />
     <Content Include="Views\SalesMovements\SalesMovementsByEmployee.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
