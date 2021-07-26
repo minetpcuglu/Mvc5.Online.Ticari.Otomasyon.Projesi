@@ -66,6 +66,7 @@
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="EntityFramework\EfCurrentDal.cs" />
     <Compile Include="EntityFramework\EfDepartmantDal.cs" />
     <Compile Include="EntityFramework\EfEmployeeDal.cs" />
     <Compile Include="EntityFramework\EfProductDal.cs" />

@@ -1,0 +1,44 @@
+﻿@using EntityLayer.Concrete
+@model List<Current>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2></h2>
+
+<table class="table table-striped" style="margin-top:20px;">
+
+    <tr>
+        <th>ID</th>
+        <th> Adı</th>
+        <th> Soyadı</th>
+        <th> E-Mail</th>
+        <th> Şehir</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th> @*//daha önce yaptıgı satın alma işlemleri*@
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.CurrentId</th>
+            <td>@item.CurrentName</td>
+            <td>@item.CurrentSurname</td>
+            <td>@item.CurrentMail</td>
+            <td>@item.CurrentCity</td>
+            <td><a href="/Category/CategoryDelete/@item.CurrentId" class="btn btn-outline-danger"><b>Sil</b></a></td>
+            <td><a href="/Category/CategoryUpdate/@item.CurrentId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
+            <td><a href="/Category/CategoryUpdate/@item.CurrentId" class="btn btn-outline-secondary"><b>Detaylar</b></a></td>
+
+
+        </tr>
+    }
+
+</table>
+<br />
+<a href="/Category/CategoryAdd" class="btn btn-outline-dark"><b>Cari Ekle</b></a>
+
