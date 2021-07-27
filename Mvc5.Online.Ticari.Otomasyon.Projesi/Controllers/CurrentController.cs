@@ -50,6 +50,14 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult CurrentDelete(int id)
+        {
+            var deger = CM.GetById(id);
+            deger.CurrentStatus = false;
+            CM.DeleteCurrent(deger);
+            return RedirectToAction("Index");
+        }
+
 
     }
 }

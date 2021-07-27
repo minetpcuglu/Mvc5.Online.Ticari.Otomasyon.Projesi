@@ -280,6 +280,7 @@
     <Content Include="Views\Current\CurrentAdd.cshtml" />
     <Content Include="Views\Current\UpdateCurrentPage.cshtml" />
     <Content Include="Views\SalesMovements\SalesMovementsByCurrent.cshtml" />
+    <Content Include="Views\Employee\AddEmployee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

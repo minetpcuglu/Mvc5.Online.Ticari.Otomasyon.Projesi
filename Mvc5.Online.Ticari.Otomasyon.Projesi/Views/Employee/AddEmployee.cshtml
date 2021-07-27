@@ -1,0 +1,42 @@
+﻿@model EntityLayer.Concrete.Employee
+@{
+    ViewBag.Title = "AddEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Yeni Personel Ekleme Sayfası</h2>
+
+<br />
+@using (Html.BeginForm("AddEmployee", "Employee", FormMethod.Post))   //baslangıc formu nerede ve ne zmaan işlem gercekleştirecegini belirler
+{
+
+
+
+    <div class="form-group">
+        @Html.Label("Personel Adı")
+        @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Personel Soyadı")
+        @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+
+        <br />
+
+        @Html.Label("Görsel Yolu :")
+        @Html.TextBoxFor(x => x.EImage, new { @class = "form-control" })
+        <br />
+
+        @Html.Label("Departman")
+        @Html.DropDownListFor(x => x.DepartmantId, (List<SelectListItem>)ViewBag.vic, new { @class = "form-control" })
+
+        <br />
+
+        <button class="btn btn-outline-success"><b>Kaydet</b></button>
+
+
+
+    </div>
+}
+
