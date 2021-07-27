@@ -11,7 +11,7 @@
 <table class="table table-striped" style="margin-top:20px;">
 
     <tr>
-        <th>ID</th>
+        <th>#</th>
         <th> Adı</th>
         <th> Soyadı</th>
         <th> E-Mail</th>
@@ -30,9 +30,9 @@
             <td>@item.CurrentSurname</td>
             <td>@item.CurrentMail</td>
             <td>@item.CurrentCity</td>
-            <td><a href="/Category/CategoryDelete/@item.CurrentId" class="btn btn-outline-danger"><b>Sil</b></a></td>
-            <td><a href="/Category/CategoryUpdate/@item.CurrentId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
-            <td><a href="/Category/CategoryUpdate/@item.CurrentId" class="btn btn-outline-secondary"><b>Detaylar</b></a></td>
+            <td><a href="/Current/CategoryDelete/@item.CurrentId" class="btn btn-outline-danger"><b>Sil</b></a></td>
+            <td><a href="/Current/UpdateCurrentPage/@item.CurrentId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
+            <td><a href="/SalesMovements/SalesMovementsByCurrent/@item.CurrentId" class="btn btn-outline-secondary"><b>Satış Geçmişi</b></a></td>
 
 
         </tr>
@@ -40,5 +40,5 @@
 
 </table>
 <br />
-<a href="/Category/CategoryAdd" class="btn btn-outline-dark"><b>Cari Ekle</b></a>
+<a href="/Current/CurrentAdd" class="btn btn-outline-dark"><b>Cari Ekle</b></a>
 

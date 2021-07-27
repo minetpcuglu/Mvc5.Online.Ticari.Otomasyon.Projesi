@@ -20,12 +20,13 @@ namespace BusinessLayer.Concrete
 
         public void CurrentAdd(Current current)
         {
+            current.CurrentStatus = true;
             _currentDal.Insert(current);
         }
 
         public void DeleteCurrent(Current current)
         {
-            _currentDal.Delete(current);
+            _currentDal.Update(current);
         }
 
         public Current GetById(int id)
@@ -40,7 +41,7 @@ namespace BusinessLayer.Concrete
 
         public List<Current> GetList()
         {
-            return _currentDal.List();
+            return _currentDal.List(x=>x.CurrentStatus==true).ToList();
         }
 
         public void UpdateCurrent(Current current)

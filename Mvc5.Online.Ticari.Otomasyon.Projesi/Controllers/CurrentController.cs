@@ -28,14 +28,26 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
 
 
         [HttpPost]
-        public ActionResult CategoryAdd(Current c)  //VALİDATOR kuralları controllerda gercekleştirdik 
+        public ActionResult CurrentAdd(Current c)  // kuralları controllerda gercekleştirdik 
         {
-
-
             CM.CurrentAdd(c);
             return RedirectToAction("Index");
 
+        }
 
+        [HttpGet]
+        public ActionResult UpdateCurrentPage(int id)
+        {
+            var deger = CM.GetById(id);
+            return View(deger);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateCurrentPage(Current d)
+        {
+            d.CurrentStatus = true;
+            CM.UpdateCurrent(d);
+            return RedirectToAction("Index");
         }
 
 

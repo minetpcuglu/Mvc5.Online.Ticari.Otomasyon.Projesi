@@ -28,6 +28,12 @@ namespace BusinessLayer.Concrete
           return  _salesMovementsDal.List();
         }
 
+        public List<SalesMovements> GetListCurrentID(int id)
+        {
+            return _salesMovementsDal.List(x => x.CurrentId == id);
+            
+        }
+
         public List<SalesMovements> GetListEmployeeID(int id)
         {
           return  _salesMovementsDal.List(x => x.EmployeeId == id);

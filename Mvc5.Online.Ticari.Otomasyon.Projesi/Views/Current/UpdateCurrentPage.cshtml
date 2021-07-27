@@ -1,0 +1,41 @@
+﻿@model EntityLayer.Concrete.Current
+
+@{
+    ViewBag.Title = "UpdateCurrentPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Cari Güncelleme Sayfası</h2>
+
+
+@using (Html.BeginForm("UpdateCurrentPage", "Current", FormMethod.Post))
+{
+<div class="form-group">
+    <br />
+
+    @Html.HiddenFor(x => x.CurrentId)
+    <br />
+    @Html.Label("Cari Adı")
+    @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+
+
+    <br />
+    @Html.Label("Cari Soyadı ")
+    @Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })
+
+
+    <br />
+    @Html.Label("E-Mail ")
+    @Html.TextBoxFor(x => x.CurrentMail, new { @class = "form-control" })
+
+
+    <br />
+    @Html.Label("Şehir ")
+    @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+
+
+    <br />
+    <button class="btn btn-outline-success"><b>Güncelle</b></button>
+</div>
+}
+

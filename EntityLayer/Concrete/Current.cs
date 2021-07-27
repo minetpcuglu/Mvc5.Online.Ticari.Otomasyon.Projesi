@@ -13,7 +13,7 @@ namespace EntityLayer.Concrete
         public int CurrentId { get; set; }   //Cari
 
         [Column(TypeName = "Varchar")]
-        [StringLength(30)]
+        [StringLength(30/*,ErrorMessage="En Fazla 30 Karakter Yazılabilir"*/ )] //validation yazı rengi kırmızı olması için validation controller 13 dakika 
         public string CurrentName { get; set; }
 
         [Column(TypeName = "Varchar")]
@@ -27,6 +27,8 @@ namespace EntityLayer.Concrete
         [Column(TypeName = "Varchar")]
         [StringLength(20)]
         public string CurrentCity { get; set; }
+        public bool CurrentStatus { get; set; }
+
 
         //ilişkiler
         public ICollection<SalesMovements> Sales { get; set; }

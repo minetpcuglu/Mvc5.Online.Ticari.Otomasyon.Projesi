@@ -1,0 +1,46 @@
+﻿@model EntityLayer.Concrete.Current
+@{
+    ViewBag.Title = "CurrentAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<br />
+<h2>Yeni Cari Ekleme Sayfası</h2>
+
+<br />
+@using (Html.BeginForm("CurrentAdd", "Current", FormMethod.Post))   //baslangıc formu nerede ve ne zmaan işlem gercekleştirecegini belirler
+{
+
+
+
+    <div class="form-group">
+        @Html.Label("Cari Adı")
+        @Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })
+
+        <br /><br />
+        @Html.Label("Cari Soyadı")
+        @Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })
+
+        <br /><br />
+
+        @Html.Label("E-Mail :")
+        @Html.TextBoxFor(x => x.CurrentMail, new { @class = "form-control" })
+        <br /><br />
+        @Html.Label("Şehir :")
+        @Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })
+
+        <br /><br />
+        <button class="btn btn-outline-success"><b>Kaydet</b></button>
+
+
+
+    </div>
+
+
+
+}
+
+
+
