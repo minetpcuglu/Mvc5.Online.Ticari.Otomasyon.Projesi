@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Employee
+@{
+    ViewBag.Title = "UpdateEmployeePage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateEmployeePage", "Employee", FormMethod.Post))
+{
+<div class="form-group">
+    <br />
+
+    @Html.HiddenFor(x => x.EmployeeId)
+    <br />
+    @Html.Label("Personel Adı")
+    @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("Personel Soyadı")
+    @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Görsel Yolu :")
+    @Html.TextBoxFor(x => x.EImage, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Departman")
+    @Html.DropDownListFor(x => x.DepartmantId, (List<SelectListItem>)ViewBag.vic, new { @class = "form-control" })
+
+    <br />
+
+    <button class="btn btn-outline-success"><b>Kaydet</b></button>
+</div>
+}
+

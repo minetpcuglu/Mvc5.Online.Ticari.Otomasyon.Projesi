@@ -48,5 +48,29 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public ActionResult UpdateEmployeePage(int id)
+        {
+            ////ilişkili tablolarda ekleme işlemi için viewbag ile veri cekme
+            List<SelectListItem> ValueEmployee = (from x in DM.GetList()  //öğeleri listele
+                                                  select new SelectListItem //yeni bir liste öğesini sec
+                                                  {
+                                                      Text = x.DepartmantName,       //valuenumber = secilen degerin ıd si
+                                                      Value = x.DepartmantId.ToString() //display number ise secilen degerin görüntüsü text olan 
+                                                  }).ToList();
+
+            ViewBag.vic = ValueEmployee;  //tasımak için 
+            var deger = EM.GetById(id);
+            return View(deger);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateEmployeePage(Employee d)
+        {
+          
+            EM.EmployeeUpdate(d);
+            return RedirectToAction("Index");
+        }
+
     }
 }
