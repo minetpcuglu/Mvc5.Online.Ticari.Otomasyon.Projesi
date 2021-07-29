@@ -1,0 +1,52 @@
+﻿@model EntityLayer.Concrete.SalesMovements
+@{
+    ViewBag.Title = "SalesMovementsUpdatePage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2> Satış İşlemi Güncelleme  Sayfası</h2>
+
+<br />
+@using (Html.BeginForm("SalesMovementsUpdatePage", "SalesMovements", FormMethod.Post))   //baslangıc formu nerede ve ne zmaan işlem gercekleştirecegini belirler
+{
+
+
+
+    <div class="form-group">
+        @Html.HiddenFor(x=>x.SalesMovementsId)
+
+        @Html.Label("Ürün Adı")
+        @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.deger, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Cari Adı Soyadı")
+        @Html.DropDownListFor(x => x.CurrentId, (List<SelectListItem>)ViewBag.deger2, new { @class = "form-control" })
+
+        <br />
+
+        @Html.Label("Personel Adı Soyadı :")
+        @Html.DropDownListFor(x => x.EmployeeId, (List<SelectListItem>)ViewBag.deger3, new { @class = "form-control" })
+        <br />
+
+        @Html.Label("Adet")
+        @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Fiyat")
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+        <br />
+        @Html.Label("Toplam Fiyat")
+        @Html.TextBoxFor(x => x.TotelPrice, new { @class = "form-control" })
+        <br />
+
+
+
+        <button class="btn btn-outline-success"><b>Güncelle</b></button>
+
+
+
+    </div>
+}
+
+

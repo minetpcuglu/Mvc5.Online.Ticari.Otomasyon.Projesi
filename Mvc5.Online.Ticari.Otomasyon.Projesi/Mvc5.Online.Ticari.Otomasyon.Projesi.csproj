@@ -282,10 +282,14 @@
     <Content Include="Views\SalesMovements\SalesMovementsByCurrent.cshtml" />
     <Content Include="Views\Employee\AddEmployee.cshtml" />
     <Content Include="Views\Employee\UpdateEmployeePage.cshtml" />
+    <Content Include="Views\SalesMovements\Index.cshtml" />
+    <Content Include="Views\SalesMovements\NewSales.cshtml" />
+    <Content Include="Views\SalesMovements\SalesMovementsUpdatePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Sales\" />
     <Folder Include="VMClasses\" />
   </ItemGroup>
   <ItemGroup>
