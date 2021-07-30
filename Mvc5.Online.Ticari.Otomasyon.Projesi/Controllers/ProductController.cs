@@ -111,6 +111,18 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
             return RedirectToAction("GetProductList");
         }
 
+
+       public ActionResult Documents()
+        {
+            return View();
+        }
+
+        public ActionResult ProductPdf()
+        {
+            var deger = PM.GetList();
+            return View(deger);
+        }
+
        
 
       

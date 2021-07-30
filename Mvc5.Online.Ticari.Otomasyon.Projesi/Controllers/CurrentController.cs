@@ -58,6 +58,12 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult CurrentPdf()
+        {
+            var deger = CM.GetList();
+            return View(deger);
+        }
+
 
     }
 }

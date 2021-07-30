@@ -1,0 +1,52 @@
+﻿@using EntityLayer.Concrete
+@model List<Bill>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+<table class="table table-bordered">
+
+    <tr>
+
+        <th>ID</th>
+        <th>Seri No</th>
+        <th>Sıra No</th>
+        <th>Vergi Dairesi</th>
+        <th>Tarih</th>
+
+        <th>Saat</th>
+        <th>Teslim Eden</th>
+        <th>Teslim Alan</th>
+        <th>Toplam Tutar</th>
+        <th style="margin-left:15px;">Güncelle</th>
+        <th style="margin-left:15px;">Detaylar</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.BillId</th>
+            <th>@item.BillSerialNo</th>
+            <th>@item.BillSıraNo</th>
+            <th>@item.TaxAdministration</th>
+            <th>@item.Date.ToShortDateString()</th>
+
+            <th>@item.Hour</th>
+            <th>@item.Submitter</th>
+            <th>@item.Deliveryarea</th>
+            <th>@item.Totel</th>
+
+
+            <td><a href="/Bill/UpdateBillPage/@item.BillId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
+            <td><a href="/BillPen/BillPenByBill/@item.BillId" class="btn btn-default" style="background-color:lightcoral; color:white;"><b> Detaylar</b></a></td>
+
+        </tr>
+    }
+
+</table>
+<a href="/Bill/BillAdd/" class="btn btn-outline-dark"><b>Fatura Ekle</b></a>
+

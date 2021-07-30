@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAdminService.cs" />
+    <Compile Include="Abstract\IBillPenService.cs" />
+    <Compile Include="Abstract\IBillService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\ICurrentService.cs" />
     <Compile Include="Abstract\IDepartmantService.cs" />
@@ -62,6 +64,8 @@
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\ISalesMovementsService.cs" />
     <Compile Include="Concrete\AdminManager.cs" />
+    <Compile Include="Concrete\BillManager.cs" />
+    <Compile Include="Concrete\BillPenManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\CurrentManager.cs" />
     <Compile Include="Concrete\DepartmantManager.cs" />

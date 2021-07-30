@@ -9,24 +9,24 @@
 
 <br />
 <br />
-<table class="table table-light">
+<table id="tbl1" class="table table-bordered" style="margin-top:20px">
+    <thead>
+        <tr>
 
-    <tr>
-
-        <th>#</th>
-        <th>Ürün </th>
-        <th>Cari </th>
-        <th>Personel </th>
-        <th>Adet </th>
-        <th>Fiyat </th>
-        <th>Toplam</th>
-        <th>Tarih</th>
-        <th>Güncelle</th>
-        <th style="margin-left:15px;">Detaylar</th>
+            <th>#</th>
+            <th>Ürün </th>
+            <th>Cari </th>
+            <th>Personel </th>
+            <th>Adet </th>
+            <th>Fiyat </th>
+            <th>Toplam</th>
+            <th>Tarih</th>
+            <th>Güncelle</th>
+            <th style="margin-left:15px;">Detaylar</th>
 
 
-    </tr>
-
+        </tr>
+    </thead>
     @foreach (var item in Model)
     {
         <tr>
@@ -38,13 +38,34 @@
             <th>@item.Price</th>
             <th>@item.TotelPrice</th>
             <th>@item.Date.ToShortDateString()</th>
-            
+
 
             <td><a href="/SalesMovements/SalesMovementsUpdatePage/@item.SalesMovementsId" class="btn btn-outline-danger"><b>Güncelle</b></a></td>
-            <td><a href="/SalesMovements/SalesMovementsByEmployee/@item.SalesMovementsId" class="btn btn-outline-warning"><b>Detaylar</b></a></td>
+            <td><a href="/SalesMovements/SalesMovementsDetails/@item.SalesMovementsId" class="btn btn-outline-warning"><b>Detaylar</b></a></td>
 
 
         </tr>
     }
 </table>
 <a href="/SalesMovements/NewSales" class="btn btn-outline-dark"><b>Yeni Satış Yap</b></a>
+
+
+
+
+@*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+
+    $('#tbl1').dataTable({});
+
+</script>

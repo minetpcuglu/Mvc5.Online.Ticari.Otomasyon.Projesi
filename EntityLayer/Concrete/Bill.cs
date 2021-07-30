@@ -20,6 +20,10 @@ namespace EntityLayer.Concrete
         [StringLength(15)]
         public string BillSıraNo { get; set; }
 
+
+        public decimal Totel { get; set; }
+
+
         [Column(TypeName = "Varchar")]
         [StringLength(50)]
         public string TaxAdministration { get; set; } //vergi dairesi
@@ -33,7 +37,11 @@ namespace EntityLayer.Concrete
         public string Submitter { get; set; } //Teslim Eden
 
         public DateTime Date { get; set; }
-        public DateTime Hour { get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(5)]
+        public string Hour { get; set; }
+      
 
 
         //ilişkiler 1-n

@@ -1,0 +1,52 @@
+﻿@model EntityLayer.Concrete.Bill
+@{
+    ViewBag.Title = "UpdateBillPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Cari Güncelleme Sayfası</h2>
+
+
+@using (Html.BeginForm("UpdateBillPage", "Bill", FormMethod.Post))
+{
+<div class="form-group">
+    <br />
+
+    @Html.HiddenFor(x => x.BillId)
+    
+    @Html.Label("Seri No")
+    @Html.TextBoxFor(x => x.BillSerialNo, new { @class = "form-control" })
+
+    <br /><br />
+    @Html.Label("Sıra No")
+    @Html.TextBoxFor(x => x.BillSıraNo, new { @class = "form-control" })
+
+    <br /><br />
+
+    @Html.Label("Vergi Dairesi")
+    @Html.TextBoxFor(x => x.TaxAdministration, new { @class = "form-control" })
+    <br /><br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br /><br />
+    @Html.Label("Toplam Tutar")
+    @Html.TextBoxFor(x => x.Totel, new { @class = "form-control" })
+    <br /><br />
+    @Html.Label("Saat")
+    @Html.TextBoxFor(x => x.Hour, new { @class = "form-control" })
+
+    <br /><br />
+    @Html.Label("Teslim Eden")
+    @Html.TextBoxFor(x => x.Submitter, new { @class = "form-control" })
+
+    <br /><br />
+    @Html.Label("Teslim Alan")
+    @Html.TextBoxFor(x => x.Deliveryarea, new { @class = "form-control" })
+
+    <br /><br />
+    <button class="btn btn-outline-success"><b>Güncelle</b></button>
+</div>
+}
+
+

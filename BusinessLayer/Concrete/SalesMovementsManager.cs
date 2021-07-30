@@ -49,6 +49,11 @@ namespace BusinessLayer.Concrete
             _salesMovementsDal.Delete(salesMovements);
         }
 
+        public List<SalesMovements> SalesMovementsDetail(int id)
+        {
+            return _salesMovementsDal.List(x => x.SalesMovementsId == id).ToList();
+        }
+
         public void SalesMovementUpdate(SalesMovements salesMovements)
         {
             _salesMovementsDal.Update(salesMovements);

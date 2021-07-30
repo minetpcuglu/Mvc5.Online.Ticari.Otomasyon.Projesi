@@ -65,12 +65,18 @@
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="EntityFramework\EfAdminDal.cs" />
+    <Compile Include="EntityFramework\EfBillDal.cs" />
+    <Compile Include="EntityFramework\EfBillPenDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfCurrentDal.cs" />
     <Compile Include="EntityFramework\EfDepartmantDal.cs" />
     <Compile Include="EntityFramework\EfEmployeeDal.cs" />
     <Compile Include="EntityFramework\EfProductDal.cs" />
     <Compile Include="EntityFramework\EfSalesMovementsDal.cs" />
+    <Compile Include="Migrations\202107301826326_migbill.cs" />
+    <Compile Include="Migrations\202107301826326_migbill.designer.cs">
+      <DependentUpon>202107301826326_migbill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -84,7 +90,11 @@
       <Name>EntityLayer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202107301826326_migbill.resx">
+      <DependentUpon>202107301826326_migbill.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

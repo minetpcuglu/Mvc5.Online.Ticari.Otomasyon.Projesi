@@ -134,6 +134,20 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
 
             return RedirectToAction("Index");
         }
+
+
+        public ActionResult SalesMovementsDetails(int id)
+        {
+            var deger = SMM.SalesMovementsDetail(id);
+
+            return View(deger);
+        }
+
+        public ActionResult SalesMovementsPdf()
+        {
+            var deger = SMM.GetList();
+            return View(deger);
+        }
     }
 
 }

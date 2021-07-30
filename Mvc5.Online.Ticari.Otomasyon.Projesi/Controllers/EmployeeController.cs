@@ -72,5 +72,11 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult EmployeePdf()
+        {
+            var deger = EM.GetList();
+            return View(deger);
+        }
+
     }
 }

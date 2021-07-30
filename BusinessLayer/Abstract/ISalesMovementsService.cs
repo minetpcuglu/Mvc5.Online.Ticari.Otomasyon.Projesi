@@ -13,6 +13,8 @@ namespace BusinessLayer.Abstract
         void SalesMovementUpdate(SalesMovements salesMovements);
         void SalesMovementAdd(SalesMovements salesMovements);
         List<SalesMovements> GetListEmployeeID(int id); //şartlı listeleme
+        List<SalesMovements> SalesMovementsDetail(int id); //şartlı listeleme
+
         List<SalesMovements> GetListCurrentID(int id); //şartlı listeleme
         List<SalesMovements> GetList();
         //List<Product> GetListStatus();

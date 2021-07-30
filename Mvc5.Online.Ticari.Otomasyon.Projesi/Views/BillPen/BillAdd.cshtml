@@ -1,0 +1,46 @@
+﻿@model EntityLayer.Concrete.BillPen
+@{
+    ViewBag.Title = "BillAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Fatura Ekleme Sayfası</h2>
+
+<br />
+@using (Html.BeginForm("BillAdd", "BillPen", FormMethod.Post))   //baslangıc formu nerede ve ne zmaan işlem gercekleştirecegini belirler
+{
+
+
+
+<div class="form-group">
+    @Html.Label("Ürün Adı")
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+
+    <br /><br />
+    @Html.Label("Adet")
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+
+    <br /><br />
+
+    @Html.Label("Fiyat")
+    @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control" })
+    <br /><br />
+    @Html.Label("Toplam Tutar")
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br /><br />
+    @Html.Label("Fatura Seri Numarası")
+    @Html.DropDownListFor(x => x.BillId, (List<SelectListItem>)ViewBag.vic, new { @class = "form-control" })
+    <br /><br />
+
+
+    <button class="btn btn-outline-success"><b>Kaydet</b></button>
+
+
+
+</div>
+
+
+
+}
+
