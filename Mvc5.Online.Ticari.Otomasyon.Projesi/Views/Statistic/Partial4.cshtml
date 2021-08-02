@@ -1,0 +1,57 @@
+﻿@model IEnumerable<EntityLayer.Concrete.SimpleTable3>
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Ürün - Marka Tablosu</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Marka</th>
+                    <th>Progress Bar</th>
+                    <th style="width: 40px">Kaç Adet</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int sirano = 0;}
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@{ sirano++;} @sirano</td>
+                        <td>@item.Brand</td>
+                        @if (item.BrandNumber < 3)
+                        {
+                            <td>
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                </div>
+                            </td>
+                        }
+                        @if (item.BrandNumber == 3)
+                        {
+                            <td>
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar bg-warning" style="width: 70%"></div>
+                                </div>
+                            </td>
+                        }
+                        @if (item.BrandNumber> 3)
+                        {
+                            <td>
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar bg-success" style="width: 90%"></div>
+                                </div>
+                            </td>
+                        }
+                        <td><span class="badge bg-danger">@item.BrandNumber</span></td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

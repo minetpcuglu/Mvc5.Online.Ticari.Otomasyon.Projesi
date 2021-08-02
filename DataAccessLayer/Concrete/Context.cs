@@ -19,6 +19,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductDetails> PDetails { get; set; }
         public DbSet<SalesMovements> Saleses { get; set; }
 
 

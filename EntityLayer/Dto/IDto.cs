@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Dto
 {
-    interface IDto
+   public interface IDto
     {
     }
 }
