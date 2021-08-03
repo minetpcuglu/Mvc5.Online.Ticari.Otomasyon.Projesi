@@ -144,6 +144,7 @@
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\SalesMovementsController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
+    <Compile Include="Controllers\ToDoListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2841,6 +2842,8 @@
     <Content Include="Views\Statistic\Partial3.cshtml" />
     <Content Include="Views\Statistic\Partial4.cshtml" />
     <Content Include="Views\Statistic\Partial5.cshtml" />
+    <Content Include="Views\Employee\PersonelDetails.cshtml" />
+    <Content Include="Views\ToDoList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

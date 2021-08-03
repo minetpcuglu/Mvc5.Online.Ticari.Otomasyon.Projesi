@@ -16,6 +16,9 @@
         <th>ID</th>
         <th>Personel Adı</th>
         <th>Personel Soyadı</th>
+        <th>Telefon</th>
+        <th>E-Mail</th>
+        <th>Adres</th>
         <th>Görsel</th>
         <th>Departman Adı</th>
         <th>Güncelle</th>
@@ -26,19 +29,23 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <th>@item.EmployeeId</th>
-            <th>@item.EmployeeName</th>
-            <th>@item.EmployeeSurname</th>
-            <th>#</th>
-            <th>@item.Departmant.DepartmantName</th>
+<tr>
+    <th>@item.EmployeeId</th>
+    <th>@item.EmployeeName</th>
+
+    <th>@item.EmployeeSurname</th>
+    <th>@item.TelephoneNumber</th>
+    <th>@item.EMail</th>
+    <th>@item.Adress</th>
+    <th>#</th>
+    <th>@item.Departmant.DepartmantName</th>
 
 
-            <td><a href="/Employee/UpdateEmployeePage/@item.EmployeeId" class="btn btn-outline-danger"><b>Güncelle</b></a></td>
-            <td><a href="/SalesMovements/SalesMovementsByEmployee/@item.EmployeeId" class="btn btn-outline-warning"><b>Detaylar</b></a></td>
+    <td><a href="/Employee/UpdateEmployeePage/@item.EmployeeId" class="btn btn-outline-danger"><b>Güncelle</b></a></td>
+    <td><a href="/SalesMovements/SalesMovementsByEmployee/@item.EmployeeId" class="btn btn-outline-warning"><b>Detaylar</b></a></td>
 
 
-        </tr>
+</tr>
     }
 </table>
 <a href="/Employee/AddEmployee/" class="btn btn-outline-dark"><b>Personel Ekle</b></a>

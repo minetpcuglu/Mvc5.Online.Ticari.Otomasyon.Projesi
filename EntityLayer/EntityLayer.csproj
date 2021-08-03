@@ -57,7 +57,8 @@
     <Compile Include="Concrete\SimpleTable3.cs" />
     <Compile Include="Concrete\SimpleTable4.cs" />
     <Compile Include="Concrete\SımpleTable2.cs" />
-    <Compile Include="Concrete\SımpleTableDTO.cs" />
+    <Compile Include="Concrete\ToDoList.cs" />
+    <Compile Include="Dto\SımpleTableDTO.cs" />
     <Compile Include="Dto\DepartmantDetailDto.cs" />
     <Compile Include="Dto\IDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

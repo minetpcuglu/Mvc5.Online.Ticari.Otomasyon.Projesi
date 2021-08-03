@@ -62,6 +62,7 @@
     <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\ISalesMovementsDal.cs" />
+    <Compile Include="Abstract\IToDoListDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="EntityFramework\EfAdminDal.cs" />
@@ -73,9 +74,14 @@
     <Compile Include="EntityFramework\EfEmployeeDal.cs" />
     <Compile Include="EntityFramework\EfProductDal.cs" />
     <Compile Include="EntityFramework\EfSalesMovementsDal.cs" />
+    <Compile Include="EntityFramework\EfToDoListDal.cs" />
     <Compile Include="Migrations\202107301826326_migbill.cs" />
     <Compile Include="Migrations\202107301826326_migbill.designer.cs">
       <DependentUpon>202107301826326_migbill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108031222035_migemployee.cs" />
+    <Compile Include="Migrations\202108031222035_migemployee.designer.cs">
+      <DependentUpon>202108031222035_migemployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,6 +99,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202107301826326_migbill.resx">
       <DependentUpon>202107301826326_migbill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108031222035_migemployee.resx">
+      <DependentUpon>202108031222035_migemployee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

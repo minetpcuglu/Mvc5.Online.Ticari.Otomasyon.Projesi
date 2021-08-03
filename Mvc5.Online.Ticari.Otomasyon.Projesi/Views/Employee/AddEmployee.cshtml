@@ -14,29 +14,38 @@
 
 
 
-    <div class="form-group">
-        @Html.Label("Personel Adı")
-        @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+<div class="form-group">
+    @Html.Label("Personel Adı")
+    @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
 
-        <br />
-        @Html.Label("Personel Soyadı")
-        @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+    <br />
+    @Html.Label("Personel Soyadı")
+    @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control" })
+    <br />
+    @Html.Label("Telefon")
+    @Html.TextBoxFor(x => x.TelephoneNumber, new { @class = "form-control" })
+    <br />
+    @Html.Label("E-Mail")
+    @Html.TextBoxFor(x => x.EMail, new { @class = "form-control" })
+    <br />
+    @Html.Label("Adres")
+    @Html.TextBoxFor(x => x.Adress, new { @class = "form-control" })
 
-        <br />
+    <br />
 
-        @Html.Label("Görsel Yolu :")
-        @Html.TextBoxFor(x => x.EImage, new { @class = "form-control" })
-        <br />
+    @Html.Label("Görsel Yolu :")
+    @Html.TextBoxFor(x => x.EImage, new { @class = "form-control" })
+    <br />
 
-        @Html.Label("Departman")
-        @Html.DropDownListFor(x => x.DepartmantId, (List<SelectListItem>)ViewBag.vic, new { @class = "form-control" })
+    @Html.Label("Departman")
+    @Html.DropDownListFor(x => x.DepartmantId, (List<SelectListItem>)ViewBag.vic, new { @class = "form-control" })
 
-        <br />
+    <br />
 
-        <button class="btn btn-outline-success"><b>Kaydet</b></button>
+    <button class="btn btn-outline-success"><b>Kaydet</b></button>
 
 
 
-    </div>
+</div>
 }
 

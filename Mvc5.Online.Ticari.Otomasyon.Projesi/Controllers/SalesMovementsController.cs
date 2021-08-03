@@ -66,6 +66,7 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
         public ActionResult NewSales(SalesMovements s)
         {
             s.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            
             SMM.SalesMovementAdd(s);
             return RedirectToAction("Index");
         }

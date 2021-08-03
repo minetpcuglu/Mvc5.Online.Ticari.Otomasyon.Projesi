@@ -21,6 +21,18 @@ namespace EntityLayer.Concrete
         public string EmployeeSurname { get; set; }
 
         [Column(TypeName = "Varchar")]
+        [StringLength(30)]
+        public string TelephoneNumber { get; set; }
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(60)]
+        public string EMail { get; set; }
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(400)]
+        public string Adress { get; set; }
+
+        [Column(TypeName = "Varchar")]
         [StringLength(300)]
         public string EImage { get; set; }
 

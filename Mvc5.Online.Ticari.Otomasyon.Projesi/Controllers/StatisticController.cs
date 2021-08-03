@@ -71,7 +71,7 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
         {
             var sorgu = from x in CM.GetList()
                         group x by x.CurrentCity into g
-                        select new SımpleTableDTO
+                        select new SımpleTableDTO  /*****/
                         {
                             City = g.Key,
                             TotelEmployee = g.Count(),

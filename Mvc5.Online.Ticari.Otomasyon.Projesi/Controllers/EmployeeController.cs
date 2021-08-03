@@ -78,5 +78,11 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
             return View(deger);
         }
 
+        public ActionResult PersonelDetails()
+        {
+            var deger = EM.GetList();
+            return View(deger);
+        }
+
     }
 }

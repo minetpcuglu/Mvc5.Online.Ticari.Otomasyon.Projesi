@@ -14,6 +14,9 @@
         <th>Personel ID</th>
         <th>Adı</th>
         <th>Soyadı</th>
+        <th>Telefon</th>
+        <th>E-Mail</th>
+        <th>Adres</th>
         <th>Görsel</th>
         <th>Satışlar</th>
     </tr>
@@ -24,6 +27,9 @@
             <th>@item.EmployeeId</th>
             <td>@item.EmployeeName</td>
             <td>@item.EmployeeSurname</td>
+            <td>@item.TelephoneNumber</td>
+            <td>@item.EMail</td>
+            <td>@item.Adress</td>
             <td>@item.EImage</td>
             <td><a href="/SalesMovements/SalesMovementsByEmployee/@item.EmployeeId" class="btn btn-default" style="background-color:orangered">Satışlar</a></td>
         </tr>

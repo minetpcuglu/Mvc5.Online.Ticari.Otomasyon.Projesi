@@ -63,6 +63,7 @@
     <Compile Include="Abstract\IEmployeeService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\ISalesMovementsService.cs" />
+    <Compile Include="Abstract\IToDoListService.cs" />
     <Compile Include="Concrete\AdminManager.cs" />
     <Compile Include="Concrete\BillManager.cs" />
     <Compile Include="Concrete\BillPenManager.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Concrete\EmployeeManager.cs" />
     <Compile Include="Concrete\ProductManager.cs" />
     <Compile Include="Concrete\SalesMovementsManager.cs" />
+    <Compile Include="Concrete\ToDoListManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\AdminValidator.cs" />
     <Compile Include="ValidationRules\CategoryValidator.cs" />
