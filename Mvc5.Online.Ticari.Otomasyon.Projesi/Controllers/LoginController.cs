@@ -1,0 +1,61 @@
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Web.Security;
+
+namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
+{
+    public class LoginController : Controller
+    {
+        CurrentManager cm = new CurrentManager(new EfCurrentDal());
+        // GET: Login
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public PartialViewResult Partial1()
+        {
+            return PartialView();
+        }
+
+
+        [HttpPost]
+        public PartialViewResult Partial1(Current c)
+        {
+            cm.CurrentAdd(c);
+            return PartialView();
+        }
+
+        [HttpGet]
+        public ActionResult CurrentLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CurrentLogin(Current a)
+        {
+            var bilgiler = cm.GetCurrent(a.CurrentMail, a.Password);
+            if (bilgiler != null)
+            {
+                FormsAuthentication.SetAuthCookie(bilgiler.CurrentMail, false);
+                Session["CurrentMail"] = bilgiler.CurrentMail.ToString();
+                return RedirectToAction("Index", "CurrentPanel");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+        }
+
+
+
+    }
+}

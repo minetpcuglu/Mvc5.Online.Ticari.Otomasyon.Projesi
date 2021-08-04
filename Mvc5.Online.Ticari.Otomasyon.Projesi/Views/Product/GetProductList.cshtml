@@ -28,27 +28,30 @@
 
     @foreach (var item in Model)
     {
-        <tr>
+<tr>
 
 
 
-            <th>@item.ProductId</th>
-            <td>@item.ProductName</td>
-            <td>@item.Brand</td>
-            <td>@item.UnitInStok</td>
-            <td>@item.UnitPrice</td>
-            <td>@item.SalePrice</td>
-            <td>@item.Category.CategoryName</td>
-            <td>@item.PImage</td>
+    <th>@item.ProductId</th>
+    <td>@item.ProductName</td>
+    <td>@item.Brand</td>
+    <td>@item.UnitInStok</td>
+    <td>@item.UnitPrice</td>
+    <td>@item.SalePrice</td>
+    <td>@item.Category.CategoryName</td>
+    <th>
+        <img src="@item.PImage" style="width:50px;" height:"25px;" />
 
-            <td><a href="/Product/ProductDelete/@item.ProductId" class="btn btn-outline-danger"><b>Sil</b></a></td>
-            <td><a href="/Product/ProductUpdatePage/@item.ProductId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
+    </th>
+
+    <td><a href="/Product/ProductDelete/@item.ProductId" class="btn btn-outline-danger"><b>Sil</b></a></td>
+    <td><a href="/Product/ProductUpdatePage/@item.ProductId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
 
 
 
 
 
-        </tr>
+</tr>
     }
 
 </table>

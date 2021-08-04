@@ -27,6 +27,10 @@ namespace EntityLayer.Concrete
         [Column(TypeName = "Varchar")]
         [StringLength(20)]
         public string CurrentCity { get; set; }
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(20)]
+        public string Password { get; set; }
         public bool CurrentStatus { get; set; }
 
 

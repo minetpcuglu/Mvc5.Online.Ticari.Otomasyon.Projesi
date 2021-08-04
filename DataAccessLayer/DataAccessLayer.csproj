@@ -83,6 +83,10 @@
     <Compile Include="Migrations\202108031222035_migemployee.designer.cs">
       <DependentUpon>202108031222035_migemployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108041745179_addpassword.cs" />
+    <Compile Include="Migrations\202108041745179_addpassword.designer.cs">
+      <DependentUpon>202108041745179_addpassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -102,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108031222035_migemployee.resx">
       <DependentUpon>202108031222035_migemployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108041745179_addpassword.resx">
+      <DependentUpon>202108041745179_addpassword.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

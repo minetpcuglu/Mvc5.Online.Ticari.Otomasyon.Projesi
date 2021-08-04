@@ -18,5 +18,6 @@ namespace BusinessLayer.Abstract
         void UpdateCurrent(Current current); //güncelleme işlemi 
 
         Current GetByName(string name); //dısarıdan bir isim alıcak
+        Current GetCurrent(string username, string password);
     }
 }

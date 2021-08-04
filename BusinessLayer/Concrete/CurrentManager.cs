@@ -39,6 +39,12 @@ namespace BusinessLayer.Concrete
             return _currentDal.Get(x => x.CurrentName == name);
         }
 
+        public Current GetCurrent(string username, string password)
+        {
+            return _currentDal.Get(x => x.CurrentMail == username && x.Password == password);
+        }
+       
+
         public List<Current> GetList()
         {
             return _currentDal.List(x=>x.CurrentStatus==true).ToList();
