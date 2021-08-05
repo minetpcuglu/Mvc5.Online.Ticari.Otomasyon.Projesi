@@ -1,10 +1,19 @@
 ﻿@using EntityLayer.Concrete
-@model List<Product>
-
+@using PagedList
+@using PagedList.Mvc
+@model  PagedList.IPagedList<Product>
 @{
     ViewBag.Title = "GetProductList";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<br />
+@using (Html.BeginForm("GetProductList","Product",FormMethod.Get))
+            {
+                <p>
+                    Ürün Adı  : @Html.TextBox("p")
+                    <input type="submit" value="Ara" />
+                </p>
+            }
 
 <br />
 <br />
@@ -28,33 +37,40 @@
 
     @foreach (var item in Model)
     {
-<tr>
+        <tr>
 
 
 
-    <th>@item.ProductId</th>
-    <td>@item.ProductName</td>
-    <td>@item.Brand</td>
-    <td>@item.UnitInStok</td>
-    <td>@item.UnitPrice</td>
-    <td>@item.SalePrice</td>
-    <td>@item.Category.CategoryName</td>
-    <th>
-        <img src="@item.PImage" style="width:50px;" height:"25px;" />
+            <th>@item.ProductId</th>
+            <td>@item.ProductName</td>
+            <td>@item.Brand</td>
+            <td>@item.UnitInStok</td>
+            <td>@item.SalePrice ₺</td>  @*//altgr t*@
+            <td>@item.UnitPrice ₺ </td>
+            <td>@item.Category.CategoryName</td>
+            <th>
+                <img src="@item.PImage" style="width:50px;" height:"25px;" />
 
-    </th>
+            </th>
 
-    <td><a href="/Product/ProductDelete/@item.ProductId" class="btn btn-outline-danger"><b>Sil</b></a></td>
-    <td><a href="/Product/ProductUpdatePage/@item.ProductId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
-
-
+            <td><a href="/Product/ProductDelete/@item.ProductId" class="btn btn-outline-danger"><b>Sil</b></a></td>
+            <td><a href="/Product/ProductUpdatePage/@item.ProductId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
 
 
 
-</tr>
-    }
+
+
+        </tr>
+        }
 
 </table>
 <a href="/Product/ProductAdd/" class="btn btn-outline-dark"><b>Ürün Ekle</b></a>
+<br /><br />
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("GetProductList", new { sayfa }), new PagedListRenderOptions
+{
+LiElementClasses = new List<string>
+{ "page-link"}
+})
 
 

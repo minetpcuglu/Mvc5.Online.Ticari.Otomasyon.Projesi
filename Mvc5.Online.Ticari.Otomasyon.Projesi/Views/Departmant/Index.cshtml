@@ -1,5 +1,7 @@
 ﻿@using EntityLayer.Concrete
-@model List<Departmant>
+@using PagedList
+@using PagedList.Mvc
+@model  PagedList.IPagedList<Departmant>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -34,3 +36,13 @@
 
 </table>
 <a href="/Departmant/DepartmantAdd/" class="btn btn-outline-dark"><b>Departman Ekle</b></a>
+
+
+<br />
+<br />
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }), new PagedListRenderOptions
+{
+LiElementClasses = new List<string>
+{ "page-link"}
+})

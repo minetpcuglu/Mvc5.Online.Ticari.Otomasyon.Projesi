@@ -1,5 +1,7 @@
 ﻿@using EntityLayer.Concrete
-@model List<BillPen>
+@using PagedList
+@using PagedList.Mvc
+@model  PagedList.IPagedList<BillPen>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -26,12 +28,12 @@
         <tr>
             <th>@item.BillPenId</th>
             <th>@item.Description</th>
-            <th>@item.Piece</th>
-            <th>@item.UnitPrice</th>
+            <th>@item.Piece </th>
+            <th>@item.UnitPrice ₺</th>
             <th>@item.Amount</th>
 
 
-           
+
 
 
         </tr>
@@ -40,4 +42,14 @@
 <br />
 <br />
 <a href="/BillPen/BillAdd/" class="btn btn-outline-dark"><b>Yeni Kalem Girişi</b></a>
+
+<br />
+<br />
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }), new PagedListRenderOptions
+{
+LiElementClasses = new List<string>
+{ "page-link"}
+})
+
 

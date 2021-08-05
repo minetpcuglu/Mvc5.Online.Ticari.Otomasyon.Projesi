@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using PagedList;
+using PagedList.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +16,9 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
         // GET: Employee
         EmployeeManager EM = new EmployeeManager(new EfEmployeeDal());
         DepartmantManager DM = new DepartmantManager(new EfDepartmantDal());
-        public ActionResult Index()
+        public ActionResult Index(int sayfa = 1)
         {
-            var deger = EM.GetList();
+            var deger = EM.GetList().ToPagedList(sayfa, 8);
             return View(deger);
         }
 

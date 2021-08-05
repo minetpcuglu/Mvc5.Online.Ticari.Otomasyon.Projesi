@@ -38,6 +38,8 @@ namespace BusinessLayer.Concrete
            return _employeeDal.Get(x => x.EmployeeId == id);
         }
 
+      
+
         public List<Employee> GetList()
         {
             return _employeeDal.List();

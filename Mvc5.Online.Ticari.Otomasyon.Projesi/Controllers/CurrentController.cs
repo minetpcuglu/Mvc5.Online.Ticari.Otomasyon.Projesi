@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using PagedList;
+using PagedList.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +16,9 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
         CurrentManager CM = new CurrentManager(new EfCurrentDal());
         // GET: Current
 
-        public ActionResult Index()
+        public ActionResult Index(int sayfa = 1)
         {
-            var deger = CM.GetList();
+            var deger = CM.GetList().ToPagedList(sayfa, 8);
             return View(deger);
         }
 

@@ -1,5 +1,7 @@
 ﻿@using EntityLayer.Concrete
-@model List<Employee>
+@using PagedList
+@using PagedList.Mvc
+@model  PagedList.IPagedList<Employee>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -29,27 +31,37 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <th>@item.EmployeeId</th>
-    <th>@item.EmployeeName</th>
+        <tr>
+            <th>@item.EmployeeId</th>
+            <th>@item.EmployeeName</th>
 
-    <th>@item.EmployeeSurname</th>
-    <th>@item.TelephoneNumber</th>
-    <th>@item.EMail</th>
-    <th>@item.Adress</th>
-    <th>
-        <img src="@item.EImage" style="width:50px;" height:"25px;" />
+            <th>@item.EmployeeSurname</th>
+            <th>@item.TelephoneNumber</th>
+            <th>@item.EMail</th>
+            <th>@item.Adress</th>
+            <th>
+                <img src="@item.EImage" style="width:50px;" height:"25px;" />
 
-    </th>
-    <th>@item.Departmant.DepartmantName</th>
-
-
-    <td><a href="/Employee/UpdateEmployeePage/@item.EmployeeId" class="btn btn-outline-danger"><b>Güncelle</b></a></td>
-    <td><a href="/SalesMovements/SalesMovementsByEmployee/@item.EmployeeId" class="btn btn-outline-warning"><b>Detaylar</b></a></td>
+            </th>
+            <th>@item.Departmant.DepartmantName</th>
 
 
-</tr>
+            <td><a href="/Employee/UpdateEmployeePage/@item.EmployeeId" class="btn btn-outline-danger"><b>Güncelle</b></a></td>
+            <td><a href="/SalesMovements/SalesMovementsByEmployee/@item.EmployeeId" class="btn btn-outline-warning"><b>Detaylar</b></a></td>
+
+
+        </tr>
     }
 </table>
 <a href="/Employee/AddEmployee/" class="btn btn-outline-dark"><b>Personel Ekle</b></a>
+
+
+<br />
+<br />
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }), new PagedListRenderOptions
+{
+LiElementClasses = new List<string>
+{ "page-link"}
+})
 

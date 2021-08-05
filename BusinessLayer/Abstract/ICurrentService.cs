@@ -10,14 +10,14 @@ namespace BusinessLayer.Abstract
     public interface ICurrentService
     {
         List<Current> GetList();
-        void CurrentAdd(Current current);//Cari eklemek için bir tanım yapıldı
+        void CurrentAdd(Current current);
 
-        void DeleteCurrent(Current current); //silme işlemi 
-        Current GetById(int id);  //dısarıdan bir ıd alıcak 
+        void DeleteCurrent(Current current); 
+        Current GetById(int id);  
 
-        void UpdateCurrent(Current current); //güncelleme işlemi 
+        void UpdateCurrent(Current current); 
 
-        Current GetByName(string name); //dısarıdan bir isim alıcak
+        Current GetByName(string name); 
         Current GetCurrent(string username, string password);
     }
 }

@@ -13,6 +13,7 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
     public class LoginController : Controller
     {
         CurrentManager cm = new CurrentManager(new EfCurrentDal());
+        AdminManager adm = new AdminManager(new EfAdminDal());
         // GET: Login
         public ActionResult Index()
         {
@@ -55,6 +56,28 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
             }
         }
 
+
+        [HttpGet]
+        public ActionResult AdminLogin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult     AdminLogin(Admin a)
+        {
+            var bilgiler = adm.GetAdmin(a.UserName , a.Password);
+            if (bilgiler != null)
+            {
+                FormsAuthentication.SetAuthCookie(bilgiler.UserName, false);
+                Session["UserName"] = bilgiler.UserName.ToString();
+                return RedirectToAction("GetCategoryList", "Category");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+        }
 
 
     }

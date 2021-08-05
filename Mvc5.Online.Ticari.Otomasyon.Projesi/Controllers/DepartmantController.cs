@@ -4,7 +4,8 @@ using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
-
+using PagedList;
+using PagedList.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,9 +25,9 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
 
 
 
-        public ActionResult Index()
+        public ActionResult Index(int sayfa = 1)
         {
-            var deger = DM.GetList();
+            var deger = DM.GetList().ToPagedList(sayfa, 8);
             return View(deger);
         }
 

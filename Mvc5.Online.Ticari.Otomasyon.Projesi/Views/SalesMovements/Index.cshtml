@@ -1,5 +1,7 @@
 ﻿@using EntityLayer.Concrete
-@model List<SalesMovements>
+@using PagedList
+@using PagedList.Mvc
+@model  PagedList.IPagedList<SalesMovements>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -64,8 +66,11 @@
 
 <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
 
-<script>
+<br />
+<br />
 
-    $('#tbl1').dataTable({});
-
-</script>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }), new PagedListRenderOptions
+{
+LiElementClasses = new List<string>
+{ "page-link"}
+})

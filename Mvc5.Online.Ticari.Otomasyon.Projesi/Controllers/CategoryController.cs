@@ -1,7 +1,8 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
-
+using PagedList;
+using PagedList.Mvc;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using System;
@@ -21,9 +22,10 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
         {
             return View();
         }
-        public ActionResult GetCategoryList()
+        public ActionResult GetCategoryList(int sayfa = 1)
         {
-            var deger = cm.GetList();
+
+            var deger = cm.GetList().ToPagedList(sayfa,5);
             return View(deger);
         }
 

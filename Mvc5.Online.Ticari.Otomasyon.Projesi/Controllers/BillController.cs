@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using PagedList;
+using PagedList.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +15,9 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
     {
         // GET: Bill
         BillManager BM = new BillManager(new EfBillDal());
-        public ActionResult Index()
+        public ActionResult Index(int sayfa = 1)
         {
-            var deger = BM.GetList();
+            var deger = BM.GetList().ToPagedList(sayfa, 8);
             return View(deger);
         }
         [HttpGet]

@@ -1,5 +1,7 @@
 ﻿@using EntityLayer.Concrete
-@model List<Current>
+@using PagedList
+@using PagedList.Mvc
+@model  PagedList.IPagedList<Current>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -41,4 +43,14 @@
 </table>
 <br />
 <a href="/Current/CurrentAdd" class="btn btn-outline-dark"><b>Cari Ekle</b></a>
+
+<br />
+<br />
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }), new PagedListRenderOptions
+{
+LiElementClasses = new List<string>
+{ "page-link"}
+})
+
 

@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using PagedList;
+using PagedList.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +16,9 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
         BillPenManager BPM = new BillPenManager(new EfBillPenDal());
         BillManager BM = new BillManager(new EfBillDal());
         // GET: BillPen
-        public ActionResult Index()
+        public ActionResult Index(int sayfa = 1)
         {
-            var deger = BPM.GetList();
+            var deger = BPM.GetList().ToPagedList(sayfa, 8);
             return View(deger);
         }
 

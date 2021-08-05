@@ -23,16 +23,19 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <th>@item.EmployeeId</th>
-            <td>@item.EmployeeName</td>
-            <td>@item.EmployeeSurname</td>
-            <td>@item.TelephoneNumber</td>
-            <td>@item.EMail</td>
-            <td>@item.Adress</td>
-            <td>@item.EImage</td>
-            <td><a href="/SalesMovements/SalesMovementsByEmployee/@item.EmployeeId" class="btn btn-default" style="background-color:orangered">Satışlar</a></td>
-        </tr>
+<tr>
+    <th>@item.EmployeeId</th>
+    <td>@item.EmployeeName</td>
+    <td>@item.EmployeeSurname</td>
+    <td>@item.TelephoneNumber</td>
+    <td>@item.EMail</td>
+    <td>@item.Adress</td>
+    <th>
+        <img src="@item.EImage" style="width:50px;" height:"25px;" />
+
+    </th>
+    <td><a href="/SalesMovements/SalesMovementsByEmployee/@item.EmployeeId" class="btn btn-default" style="background-color:orangered">Satışlar</a></td>
+</tr>
     }
 </table>
 

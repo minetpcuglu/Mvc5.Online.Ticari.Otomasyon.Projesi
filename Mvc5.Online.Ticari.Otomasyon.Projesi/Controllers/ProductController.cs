@@ -4,6 +4,8 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using PagedList;
+using PagedList.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,9 +26,9 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
             return View();
         }
 
-        public ActionResult GetProductList()
+        public ActionResult GetProductList(int sayfa = 1)
         {
-            var deger = PM.GetList();
+            var deger = PM.GetList().ToPagedList(sayfa, 8);
            
             return View(deger);
         }

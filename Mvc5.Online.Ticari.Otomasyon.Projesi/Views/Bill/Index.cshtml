@@ -1,5 +1,7 @@
 ﻿@using EntityLayer.Concrete
-@model List<Bill>
+@using PagedList
+@using PagedList.Mvc
+@model  PagedList.IPagedList<Bill>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -11,16 +13,18 @@
 
     <tr>
 
-        <th>ID</th>
-        <th>Seri No</th>
-        <th>Sıra No</th>
+       
+        <th>Seri Sıra No</th>
+       
         <th>Vergi Dairesi</th>
         <th>Tarih</th>
 
-        <th>Saat</th>
+
         <th>Teslim Eden</th>
         <th>Teslim Alan</th>
         <th>Toplam Tutar</th>
+      
+        <th>Yeni Kalem</th>
         <th style="margin-left:15px;">Güncelle</th>
         <th style="margin-left:15px;">Detaylar</th>
 
@@ -28,25 +32,73 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <th>@item.BillId</th>
-            <th>@item.BillSerialNo</th>
-            <th>@item.BillSıraNo</th>
-            <th>@item.TaxAdministration</th>
-            <th>@item.Date.ToShortDateString()</th>
+<tr>
 
-            <th>@item.Hour</th>
-            <th>@item.Submitter</th>
-            <th>@item.Deliveryarea</th>
-            <th>@item.Totel</th>
+    <th>@item.BillSerialNo / @item.BillSıraNo</th>
+
+    <th>@item.TaxAdministration</th>
+    <th>@item.Date.ToShortDateString()   @item.Hour</th>
+
+   
+    <th>@item.Submitter</th>
+    <th>@item.Deliveryarea</th>
+    <th>@item.Totel ₺</th>
+   
+    <td><a href="/BillPen/BillAdd/@item.BillId" class="btn btn-outline-success" ><b>Kalem</b></a></td>
 
 
-            <td><a href="/Bill/UpdateBillPage/@item.BillId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
-            <td><a href="/BillPen/BillPenByBill/@item.BillId" class="btn btn-default" style="background-color:lightcoral; color:white;"><b> Detaylar</b></a></td>
+    <td><a href="/Bill/UpdateBillPage/@item.BillId" class="btn btn-outline-warning"><b>Güncelle</b></a></td>
+    <td><a href="/BillPen/BillPenByBill/@item.BillId" class="btn btn-default" style="background-color:lightcoral; color:white;"><b> Detaylar</b></a></td>
 
-        </tr>
+</tr>
     }
 
 </table>
+<br /><br />
 <a href="/Bill/BillAdd/" class="btn btn-outline-dark"><b>Fatura Ekle</b></a>
+
+<br />
+<br />
+<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#Modal1">
+
+    <b>Popup Penceresi</b>
+</button>
+<br /><br />
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }), new PagedListRenderOptions
+{
+LiElementClasses = new List<string>
+{ "page-link"}
+})
+
+<br />
+
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title"> Popup Dialog Ekranı </h2>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover">
+                    <tr>
+                        <td>Seri Sıra No</td>
+                        <td>Toplam Tutar</td>
+
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@item.BillSerialNo @item.BillSıraNo</td>
+                        <td>@item.Totel</td>
+                    </tr>
+                    }
+                </table>
+                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">İptal</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 

@@ -1,5 +1,7 @@
 ﻿@using EntityLayer.Concrete
-@model List<Category>
+@using PagedList
+@using PagedList.Mvc
+@model  PagedList.IPagedList<Category>
 
 @{
     ViewBag.Title = "Index";
@@ -31,4 +33,20 @@
     }
 
 </table>
+
+@*@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("GetCategoryList",new { sayfa}))*@
+
+
+
+
 <a href="/Category/CategoryAdd" class="btn btn-outline-dark"><b>Kategori Ekle</b></a>
+
+<br />
+<br />
+
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("GetCategoryList", new { sayfa }), new PagedListRenderOptions
+{
+LiElementClasses = new List<string>
+{ "page-link"}
+})

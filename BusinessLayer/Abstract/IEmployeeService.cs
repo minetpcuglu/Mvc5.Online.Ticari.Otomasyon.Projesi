@@ -14,6 +14,7 @@ namespace BusinessLayer.Abstract
         void EmployeeUpdate(Employee employee);
         void EmployeeAdd(Employee employee);
         List<Employee> GetList();
+      
 
         List<Employee> GetListDepartmantID(int id); //şartlı listeleme
 
