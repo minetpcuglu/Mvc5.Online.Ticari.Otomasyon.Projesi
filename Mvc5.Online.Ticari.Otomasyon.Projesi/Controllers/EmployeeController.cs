@@ -5,6 +5,7 @@ using PagedList;
 using PagedList.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -46,6 +47,14 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
         [HttpPost]
         public ActionResult AddEmployee(Employee e)
         {
+            if (Request.Files.Count>0) //resim ekleme
+            {
+                string dosyaadi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaadi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                e.EImage = "/Image/" + dosyaadi + uzanti;
+            }
             EM.EmployeeAdd(e);
             return RedirectToAction("Index");
         }
@@ -69,7 +78,15 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
         [HttpPost]
         public ActionResult UpdateEmployeePage(Employee d)
         {
-          
+            if (Request.Files.Count > 0) //resim ekleme
+            {
+                string dosyaadi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dosyaadi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                d.EImage = "/Image/" + dosyaadi + uzanti;
+            }
+
             EM.EmployeeUpdate(d);
             return RedirectToAction("Index");
         }

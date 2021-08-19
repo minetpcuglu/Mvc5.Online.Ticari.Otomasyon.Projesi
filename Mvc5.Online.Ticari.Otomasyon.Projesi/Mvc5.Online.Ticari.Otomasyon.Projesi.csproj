@@ -2906,9 +2906,12 @@
     <Content Include="Views\Shared\_CurrentLayout.cshtml" />
     <Content Include="Views\CurrentPanel\Index.cshtml" />
     <Content Include="Views\CurrentPanel\MyOrders.cshtml" />
+    <Content Include="Views\Home\Alert.cshtml" />
+    <Content Include="Views\SalesMovements\SalesProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Image\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Sales\" />
     <Folder Include="VMClasses\" />

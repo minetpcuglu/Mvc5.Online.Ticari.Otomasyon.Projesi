@@ -26,5 +26,9 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
 
             return View();
         }
+        public ActionResult Alert()
+        {
+            return View();
+        }
     }
 }

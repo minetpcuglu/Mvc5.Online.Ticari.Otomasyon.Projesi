@@ -151,6 +151,20 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
             var deger = SMM.GetList();
             return View(deger);
         }
+
+        [HttpGet]
+        public ActionResult SalesProduct()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SalesProduct(SalesMovements s)
+        {
+
+            return View();
+        }
     }
 
 }

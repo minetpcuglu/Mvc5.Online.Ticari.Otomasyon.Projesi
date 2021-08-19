@@ -1,0 +1,54 @@
+﻿@model EntityLayer.Concrete.SalesMovements
+@{
+    ViewBag.Title = "SalesProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<br />
+<h2>Yeni Ürün Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("SalesProduct", "SalesMovements", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Ürün ID ")
+    @Html.TextBoxFor(x => x.ProductId, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("Personel ID")
+    @Html.TextBoxFor(x => x.EmployeeId, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("Cari ID ")
+    @Html.TextBoxFor(x => x.CurrentId, new { @class = "form-control" })
+
+    <br />
+    @Html.Label("Adet ")
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+
+    <br />
+
+    @Html.Label("Satış Fiyatı ")
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+
+
+    <br />
+
+    @Html.Label("Toplam Tutar ")
+    @Html.TextBoxFor(x => x.TotelPrice, new { @class = "form-control" })
+
+
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+  
+
+
+  
+    <br />
+
+    <button class="btn btn-outline-success"><b>Satış Yap</b></button>
+</div>
+}

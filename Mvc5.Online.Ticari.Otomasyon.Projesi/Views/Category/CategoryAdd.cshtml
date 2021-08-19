@@ -3,6 +3,8 @@
     ViewBag.Title = "CategoryAdd";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
 
 <h2>Yeni Kategori Ekleme Sayfası</h2>
 <br />
@@ -14,6 +16,13 @@
         @Html.ValidationMessageFor(x => x.CategoryName)
     </div>
     <br />
-    <button class="btn btn-outline-success"><b>Kaydet</b></button>
 }
+<button class="btn btn-outline-success" id="Btn1"><b>Kaydet</b></button>
+<script>
+    $('#Btn1').click(function () {
+        swal("Başarılı!", "Yeni Kategori eklendi!", "success");
+
+    });
+
+</script>
 

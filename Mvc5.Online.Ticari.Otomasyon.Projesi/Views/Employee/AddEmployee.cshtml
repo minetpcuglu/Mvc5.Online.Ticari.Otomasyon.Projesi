@@ -9,7 +9,7 @@
 <h2>Yeni Personel Ekleme Sayfası</h2>
 
 <br />
-@using (Html.BeginForm("AddEmployee", "Employee", FormMethod.Post))   //baslangıc formu nerede ve ne zmaan işlem gercekleştirecegini belirler
+@using (Html.BeginForm("AddEmployee", "Employee", FormMethod.Post,new { enctype ="multipart/form-data" }))   //baslangıc formu nerede ve ne zmaan işlem gercekleştirecegini belirler
 {
 
 
@@ -34,7 +34,8 @@
     <br />
 
     @Html.Label("Görsel Yolu :")
-    @Html.TextBoxFor(x => x.EImage, new { @class = "form-control" })
+    <input type="file"name="EImage"/>
+    @*@Html.TextBoxFor(x => x.EImage, new { @class = "form-control" })*@
     <br />
 
     @Html.Label("Departman")

@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-@using (Html.BeginForm("UpdateEmployeePage", "Employee", FormMethod.Post))
+@using (Html.BeginForm("UpdateEmployeePage", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 <div class="form-group">
     <br />
@@ -30,7 +30,7 @@
     <br />
 
     @Html.Label("Görsel Yolu :")
-    @Html.TextBoxFor(x => x.EImage, new { @class = "form-control" })
+    <input type="file" name="EImage" />
     <br />
 
     @Html.Label("Departman")
