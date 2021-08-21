@@ -7,18 +7,20 @@
 
 
 <br />
-<h2>Yeni Ürün Sayfası</h2>
+<h2>Yeni Satış Yap</h2>
 <br />
+
+
 
 @using (Html.BeginForm("SalesProduct", "SalesMovements", FormMethod.Post))
 {
 <div class="form-group">
     @Html.Label("Ürün ID ")
-    @Html.TextBoxFor(x => x.ProductId, new { @class = "form-control" })
+    <input type="text" name="ProductId" value="@ViewBag.deger2" class="form-control" readonly />
 
     <br />
-    @Html.Label("Personel ID")
-    @Html.TextBoxFor(x => x.EmployeeId, new { @class = "form-control" })
+    @Html.Label("Personel Adı Soyadı :")
+    @Html.DropDownListFor(x => x.EmployeeId, (List<SelectListItem>)ViewBag.deger, new { @class = "form-control" })
 
     <br />
     @Html.Label("Cari ID ")
@@ -26,29 +28,39 @@
 
     <br />
     @Html.Label("Adet ")
-    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <input type="number" name="Piece" class="form-control"  placeholder="Adet giriniz" id="txt1" onchange="sum();" />
 
     <br />
 
     @Html.Label("Satış Fiyatı ")
-    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <input type="text" name="Price" value="@ViewBag.deger3" class="form-control" id="txt2" onkeyup="sum();" />
 
 
     <br />
 
     @Html.Label("Toplam Tutar ")
-    @Html.TextBoxFor(x => x.TotelPrice, new { @class = "form-control" })
+    <input type="text" name="TotelPrice" class="form-control" value="0" id="txt3" readonly />
 
 
-    <br />
-    @Html.Label("Tarih")
-    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
-  
 
 
-  
     <br />
 
     <button class="btn btn-outline-success"><b>Satış Yap</b></button>
 </div>
 }
+
+<br />
+@*<input type="text" id="txt1" onkeyup="sum();"/>*@
+@*<input type="text" id="txt2" onkeyup="sum();"/>*@
+@*<input type="text" id="txt3"/>*@
+<script>
+    function sum() {
+        var sayi1 = document.getElementById('txt1').value;
+        var sayi2 = document.getElementById('txt2').value;
+        var sonuc = parseInt(sayi1) * parseInt(sayi2);
+        if (!isNaN(sonuc)) {
+            document.getElementById('txt3').value = sonuc;
+        }
+    }
+</script>

@@ -153,17 +153,31 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
         }
 
         [HttpGet]
-        public ActionResult SalesProduct()
+        public ActionResult SalesProduct(int id)
         {
+            List<SelectListItem> degerpersonel = (from x in EM.GetList()
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.EmployeeName + " " + x.EmployeeSurname,
+                                                      Value = x.EmployeeId.ToString()
+                                                  }
+                                        ).ToList();
 
+            var degerbul = PM.GetById(id);
+       
+            
+            ViewBag.deger = degerpersonel;
+            ViewBag.deger2 = degerbul.ProductId;
+            ViewBag.deger3 = degerbul.SalePrice;
             return View();
         }
 
         [HttpPost]
         public ActionResult SalesProduct(SalesMovements s)
         {
-
-            return View();
+            s.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
+            SMM.SalesMovementAdd(s);
+            return RedirectToAction("Index");
         }
     }
 

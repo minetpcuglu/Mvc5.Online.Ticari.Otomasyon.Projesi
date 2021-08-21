@@ -5,7 +5,7 @@
 }
 
 <br />
-<h2>Yeni ürün Ekleme Sayfası</h2>
+<h2>Satış Sayfası</h2>
 
 <br />
 @using (Html.BeginForm("NewSales", "SalesMovements", FormMethod.Post))   //baslangıc formu nerede ve ne zmaan işlem gercekleştirecegini belirler
@@ -26,18 +26,22 @@
     @Html.Label("Personel Adı Soyadı :")
     @Html.DropDownListFor(x => x.EmployeeId, (List<SelectListItem>)ViewBag.deger3, new { @class = "form-control" })
     <br />
+    @Html.Label("Adet ")
+    <input type="number" class="form-control" max="150" min="0" placeholder="Adet giriniz" id="txt1" onchange="sum();" />
 
-    @Html.Label("Adet")
-    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Satış Fiyatı ")
+    <input type="text" name="Price" class="form-control" id="txt2" onkeyup="sum();" />
+
 
     <br />
-    @Html.Label("Fiyat")
-    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+
+    @Html.Label("Toplam Tutar ")
+    <input type="text" name="TotelPrice" class="form-control" value="0" id="txt3" readonly />
+
+
     <br />
-    @Html.Label("Toplam Fiyat")
-    @Html.TextBoxFor(x => x.TotelPrice, new { @class = "form-control" })
-    <br />
-  
 
 
     <button class="btn btn-outline-success"><b>Ekle</b></button>
@@ -46,5 +50,16 @@
 
 </div>
 }
+
+<script>
+    function sum() {
+        var sayi1 = document.getElementById('txt1').value;
+        var sayi2 = document.getElementById('txt2').value;
+        var sonuc = parseInt(sayi1) * parseInt(sayi2);
+        if (!isNaN(sonuc)) {
+            document.getElementById('txt3').value = sonuc;
+        }
+    }
+</script>
 
 
