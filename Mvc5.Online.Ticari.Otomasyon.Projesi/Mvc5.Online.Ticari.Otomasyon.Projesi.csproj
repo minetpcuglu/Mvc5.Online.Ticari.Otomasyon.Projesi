@@ -140,6 +140,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BillController.cs" />
     <Compile Include="Controllers\BillPenController.cs" />
+    <Compile Include="Controllers\CargoController.cs" />
+    <Compile Include="Controllers\CargoTrackingController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CurrentController.cs" />
     <Compile Include="Controllers\CurrentPanelController.cs" />
@@ -2908,6 +2910,9 @@
     <Content Include="Views\CurrentPanel\MyOrders.cshtml" />
     <Content Include="Views\Home\Alert.cshtml" />
     <Content Include="Views\SalesMovements\SalesProduct.cshtml" />
+    <Content Include="Views\Cargo\Index.cshtml" />
+    <Content Include="Views\Cargo\CargoAdd.cshtml" />
+    <Content Include="Views\CargoTracking\CargoDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

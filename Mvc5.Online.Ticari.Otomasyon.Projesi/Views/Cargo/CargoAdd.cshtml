@@ -1,0 +1,48 @@
+﻿@model EntityLayer.Concrete.CargoDetail
+@{
+    ViewBag.Title = "CargoAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Yeni Kargo Girişi</h2>
+
+<br />
+@using (Html.BeginForm("CargoAdd", "Cargo", FormMethod.Post))   //baslangıc formu nerede ve ne zmaan işlem gercekleştirecegini belirler
+{
+
+
+
+<div class="form-group">
+    @Html.Label("Takip Kodu :")
+   <input type="text" value="@ViewBag.takipkodu" class="form-control" name="TrackingCode" readonly/>
+
+    <br /><br />
+    @Html.Label("Personel Adı Soyadı :")
+    @Html.TextBoxFor(x => x.Employee, new { @class = "form-control" })
+
+    <br /><br />
+    @Html.Label("Alıcı Adı Soyadı :")
+    @Html.TextBoxFor(x => x.ReceiverName, new { @class = "form-control" })
+    <br /><br />
+    @Html.Label("Açıklama :")
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+
+
+    <br /><br />
+
+    @Html.Label("Tarih :")
+    <input class="form-control" type="date" name="Date" />
+
+    <br /><br />
+    <button class="btn btn-outline-success"><b>Kaydet</b></button>
+
+
+
+</div>
+
+
+
+}
+

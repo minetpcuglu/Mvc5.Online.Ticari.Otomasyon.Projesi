@@ -54,6 +54,8 @@
     <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\IBillDal.cs" />
     <Compile Include="Abstract\IBillPenDal.cs" />
+    <Compile Include="Abstract\ICargoDetailDal.cs" />
+    <Compile Include="Abstract\ICargoTrackingDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\ICurrentDal.cs" />
     <Compile Include="Abstract\IDepartmantDal.cs" />
@@ -68,6 +70,8 @@
     <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfBillDal.cs" />
     <Compile Include="EntityFramework\EfBillPenDal.cs" />
+    <Compile Include="EntityFramework\EfCargoDetailDal.cs" />
+    <Compile Include="EntityFramework\EfCargoTrackingDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfCurrentDal.cs" />
     <Compile Include="EntityFramework\EfDepartmantDal.cs" />
@@ -86,6 +90,10 @@
     <Compile Include="Migrations\202108041745179_addpassword.cs" />
     <Compile Include="Migrations\202108041745179_addpassword.designer.cs">
       <DependentUpon>202108041745179_addpassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108221844544_cargoaddmig.cs" />
+    <Compile Include="Migrations\202108221844544_cargoaddmig.designer.cs">
+      <DependentUpon>202108221844544_cargoaddmig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108041745179_addpassword.resx">
       <DependentUpon>202108041745179_addpassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108221844544_cargoaddmig.resx">
+      <DependentUpon>202108221844544_cargoaddmig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

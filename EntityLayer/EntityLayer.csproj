@@ -45,6 +45,8 @@
     <Compile Include="Concrete\Admin.cs" />
     <Compile Include="Concrete\Bill.cs" />
     <Compile Include="Concrete\BillPen.cs" />
+    <Compile Include="Concrete\CargoDetail.cs" />
+    <Compile Include="Concrete\CargoTracking.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Current.cs" />
     <Compile Include="Concrete\Departmant.cs" />
