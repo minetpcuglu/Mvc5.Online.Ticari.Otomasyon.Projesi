@@ -64,6 +64,9 @@
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="QRCoder">
+      <HintPath>..\..\..\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -148,16 +151,21 @@
     <Compile Include="Controllers\DepartmantController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\GaleryController.cs" />
+    <Compile Include="Controllers\GraphController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
+    <Compile Include="Controllers\QRCodeController.cs" />
     <Compile Include="Controllers\SalesMovementsController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
     <Compile Include="Controllers\ToDoListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryVM.cs" />
+    <Compile Include="Models\CurrentVM.cs" />
+    <Compile Include="Models\EmployeeVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2913,11 +2921,14 @@
     <Content Include="Views\Cargo\Index.cshtml" />
     <Content Include="Views\Cargo\CargoAdd.cshtml" />
     <Content Include="Views\CargoTracking\CargoDetail.cshtml" />
+    <Content Include="Views\QRCode\Index.cshtml" />
+    <Content Include="Views\Graph\Index.cshtml" />
+    <Content Include="Views\Graph\Index2.cshtml" />
+    <Content Include="Views\Graph\Index3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Image\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Sales\" />
     <Folder Include="VMClasses\" />
   </ItemGroup>
