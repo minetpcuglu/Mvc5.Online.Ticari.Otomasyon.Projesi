@@ -52,6 +52,7 @@
     <Compile Include="Concrete\Departmant.cs" />
     <Compile Include="Concrete\Employee.cs" />
     <Compile Include="Concrete\Expense.cs" />
+    <Compile Include="Concrete\Message.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\ProductDetails.cs" />
     <Compile Include="Concrete\ProductDTO.cs" />

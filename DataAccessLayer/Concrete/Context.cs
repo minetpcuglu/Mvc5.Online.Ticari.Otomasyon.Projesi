@@ -24,6 +24,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<CargoTracking> cargoTrackings{ get; set; }
         public DbSet<CargoDetail> cargoDetails{ get; set; }
         public DbSet<ToDoList> toDoLists { get; set; }
+        public DbSet<Message> messages { get; set; }
 
 
 

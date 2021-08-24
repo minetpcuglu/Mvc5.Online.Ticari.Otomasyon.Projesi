@@ -154,6 +154,7 @@
     <Compile Include="Controllers\GraphController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\QRCodeController.cs" />
@@ -2925,6 +2926,7 @@
     <Content Include="Views\Graph\Index.cshtml" />
     <Content Include="Views\Graph\Index2.cshtml" />
     <Content Include="Views\Graph\Index3.cshtml" />
+    <Content Include="Views\Message\InBox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

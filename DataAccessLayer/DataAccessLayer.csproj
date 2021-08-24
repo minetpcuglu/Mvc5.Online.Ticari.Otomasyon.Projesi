@@ -61,6 +61,7 @@
     <Compile Include="Abstract\IDepartmantDal.cs" />
     <Compile Include="Abstract\IEmployeeDal.cs" />
     <Compile Include="Abstract\IExpenseDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\ISalesMovementsDal.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="EntityFramework\EfCurrentDal.cs" />
     <Compile Include="EntityFramework\EfDepartmantDal.cs" />
     <Compile Include="EntityFramework\EfEmployeeDal.cs" />
+    <Compile Include="EntityFramework\EfMessageDal.cs" />
     <Compile Include="EntityFramework\EfProductDal.cs" />
     <Compile Include="EntityFramework\EfSalesMovementsDal.cs" />
     <Compile Include="EntityFramework\EfToDoListDal.cs" />
@@ -94,6 +96,10 @@
     <Compile Include="Migrations\202108221844544_cargoaddmig.cs" />
     <Compile Include="Migrations\202108221844544_cargoaddmig.designer.cs">
       <DependentUpon>202108221844544_cargoaddmig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108241921531_newcontent.cs" />
+    <Compile Include="Migrations\202108241921531_newcontent.designer.cs">
+      <DependentUpon>202108241921531_newcontent.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108221844544_cargoaddmig.resx">
       <DependentUpon>202108221844544_cargoaddmig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108241921531_newcontent.resx">
+      <DependentUpon>202108241921531_newcontent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

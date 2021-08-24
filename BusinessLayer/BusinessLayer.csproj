@@ -63,6 +63,7 @@
     <Compile Include="Abstract\ICurrentService.cs" />
     <Compile Include="Abstract\IDepartmantService.cs" />
     <Compile Include="Abstract\IEmployeeService.cs" />
+    <Compile Include="Abstract\IMessageService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\ISalesMovementsService.cs" />
     <Compile Include="Abstract\IToDoListService.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Concrete\CurrentManager.cs" />
     <Compile Include="Concrete\DepartmantManager.cs" />
     <Compile Include="Concrete\EmployeeManager.cs" />
+    <Compile Include="Concrete\MessageManager.cs" />
     <Compile Include="Concrete\ProductManager.cs" />
     <Compile Include="Concrete\SalesMovementsManager.cs" />
     <Compile Include="Concrete\ToDoListManager.cs" />
