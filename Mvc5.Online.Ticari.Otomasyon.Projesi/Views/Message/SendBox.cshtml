@@ -1,9 +1,10 @@
 ﻿@using EntityLayer.Concrete
 @model List<Message>
 @{
-    ViewBag.Title = "InBox";
+    ViewBag.Title = "SendBox";
     Layout = "~/Views/Shared/_CurrentLayout.cshtml";
 }
+
 
 <!DOCTYPE html>
 
@@ -63,7 +64,7 @@
 
                 </div>
 
-             
+
 
             </div>
 
@@ -187,7 +188,7 @@
 
                                     <i class="far fa-circle text-danger"></i>
 
-                                   Favoriler
+                                    Favoriler
 
                                 </a>
 
@@ -316,37 +317,37 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                    <tr>
+                                        <tr>
 
-                                        <td>
+                                            <td>
 
-                                            <div class="icheck-primary">
+                                                <div class="icheck-primary">
 
-                                                <input type="checkbox" value="" id="check1">
+                                                    <input type="checkbox" value="" id="check1">
 
-                                                <label for="check1"></label>
+                                                    <label for="check1"></label>
 
-                                            </div>
+                                                </div>
 
-                                        </td>
+                                            </td>
 
-                                        <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
 
-                                        <td class="mailbox-name"><a href="/Message/MessageDetail/@item.MessageId">@item.SenderMail</a></td>
+                                            <td class="mailbox-name"><a href="read-mail.html">@item.ReceiverMail</a></td>
 
-                                        <td class="mailbox-subject">
+                                            <td class="mailbox-subject">
 
-                                            <b>@item.Subject  </b>   @item.Content.Substring(0,20) ...
+                                                <b>@item.Subject  </b>   @item.Content.Substring(0, 20) ...
 
-                                        </td>
+                                            </td>
 
-                                        <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-attachment"></td>
 
-                                        <td class="mailbox-date">@item.Date.ToShortDateString()</td>
+                                            <td class="mailbox-date">@item.Date.ToShortDateString()</td>
 
-                                    </tr>
+                                        </tr>
                                     }
-                                
+
 
                                 </tbody>
 
@@ -420,7 +421,7 @@
 
 
 
-   
+
 
     <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
 
@@ -514,6 +515,3 @@
 </body>
 
 </html>
-
-
-
