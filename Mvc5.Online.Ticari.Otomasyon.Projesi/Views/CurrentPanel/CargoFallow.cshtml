@@ -1,0 +1,51 @@
+﻿@using EntityLayer.Concrete
+@model  List<CargoDetail>
+@{
+    ViewBag.Title = "CargoFallow";
+    Layout = "~/Views/Shared/_CurrentLayout.cshtml";
+}
+
+<br />
+
+@using (Html.BeginForm("CargoFallow", "CurrentPanel", FormMethod.Get))
+{
+    <p>
+        <b>Kargo Takip No :</b> @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+
+<table class="table table-bordered">
+
+    <tr>
+
+        <th>Personel</th>
+        <th>Alıcı</th>
+        <th>Takip Kodu</th>
+        <th>Tarih</th>
+        <th>Detaylar</th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.Employee</th>
+            <th>@item.ReceiverName</th>
+            <th>@item.TrackingCode</th>
+            <th>@item.Date.ToShortDateString()</th>
+
+            <td><a href="/CurrentPanel/CurrentCargoDetail/@item.TrackingCode" class="btn btn-outline-dark"><b> Detaylar</b></a></td>
+
+        </tr>
+    }
+
+</table>
+
+
+<br />
+<br />
+
+
+

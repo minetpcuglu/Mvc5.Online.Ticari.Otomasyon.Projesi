@@ -217,6 +217,9 @@
     <Content Include="AdminLTE-3.0.4\dist\img\credit\visa.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\default-150x150.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\icons.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\indir.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\indir1.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\mesage.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo1.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo2.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\photo3.jpg" />
@@ -234,6 +237,7 @@
     <Content Include="AdminLTE-3.0.4\dist\img\user6-128x128.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\user7-128x128.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\user8-128x128.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\usericon.png" />
     <Content Include="AdminLTE-3.0.4\dist\js\adminlte.js" />
     <Content Include="AdminLTE-3.0.4\dist\js\adminlte.min.js" />
     <Content Include="AdminLTE-3.0.4\dist\js\demo.js" />
@@ -2930,6 +2934,10 @@
     <Content Include="Views\Message\SendBox.cshtml" />
     <Content Include="Views\Message\MessageDetail.cshtml" />
     <Content Include="Views\Message\NewMessage.cshtml" />
+    <Content Include="Views\CurrentPanel\CargoFallow.cshtml" />
+    <Content Include="Views\CurrentPanel\CurrentCargoDetail.cshtml" />
+    <Content Include="Views\CurrentPanel\CurrentProfilPartial.cshtml" />
+    <Content Include="Views\CurrentPanel\CurrentDuyurularPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
