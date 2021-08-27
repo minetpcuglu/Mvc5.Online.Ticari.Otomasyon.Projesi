@@ -10,6 +10,7 @@ using System.Web.Security;
 
 namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         CurrentManager cm = new CurrentManager(new EfCurrentDal());

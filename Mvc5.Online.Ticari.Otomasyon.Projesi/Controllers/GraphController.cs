@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
 {
+    //ürün stok olabilir
     public class GraphController : Controller
     {
         Context c = new Context();

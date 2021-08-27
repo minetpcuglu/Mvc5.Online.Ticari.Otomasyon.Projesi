@@ -17,6 +17,7 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
     {
         // GET: Category
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        ProductManager pm = new     ProductManager(new EfProductDal());
         CategoryValidator CV = new CategoryValidator(); //kurallar için nesne türettik  
         public ActionResult Index()
         {
@@ -93,6 +94,28 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
                 }
             }
             return View();
+        }
+
+        public ActionResult CascadingProduct()
+        {
+            CascadingProduct cs = new CascadingProduct();
+            cs.category = new SelectList(cm.GetList(), "CategoryId", "CategoryName");
+            cs.product = new SelectList(pm.GetList(), "ProductId", "ProductName");
+            return View(cs);
+
+        }
+        public JsonResult GetProduct(int p)
+        {
+            var productlist = (from x in pm.GetList()
+                               join y in cm.GetList()
+                               on x.Category.CategoryId equals y.CategoryId
+                               where x.Category.CategoryId == p
+                               select new
+                               {
+                                   Text = x.ProductName,
+                                   Value = x.ProductId.ToString()
+                               }).ToList();
+            return Json(productlist, JsonRequestBehavior.AllowGet);
         }
     }
         

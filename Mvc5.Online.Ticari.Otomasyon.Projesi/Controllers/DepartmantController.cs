@@ -14,6 +14,7 @@ using System.Web.Mvc;
 
 namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
 {
+    [Authorize]
     public class DepartmantController : Controller
     {
         // GET: Departmant

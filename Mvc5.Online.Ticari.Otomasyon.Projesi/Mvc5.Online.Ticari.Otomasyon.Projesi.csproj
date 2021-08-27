@@ -150,6 +150,7 @@
     <Compile Include="Controllers\CurrentPanelController.cs" />
     <Compile Include="Controllers\DepartmantController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\GaleryController.cs" />
     <Compile Include="Controllers\GraphController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -188,6 +189,10 @@
     <Content Include="AdminLTE-3.0.4\build\npm\DocsPublish.js" />
     <Content Include="AdminLTE-3.0.4\build\npm\Plugins.js" />
     <Content Include="AdminLTE-3.0.4\build\npm\Publish.js" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\css\style.css" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\img\bg.jpg" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\index.html" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\readme.txt" />
     <Content Include="AdminLTE-3.0.4\dist\css\adminlte.css" />
     <Content Include="AdminLTE-3.0.4\dist\css\adminlte.min.css" />
     <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.components.css" />
@@ -2938,6 +2943,8 @@
     <Content Include="Views\CurrentPanel\CurrentCargoDetail.cshtml" />
     <Content Include="Views\CurrentPanel\CurrentProfilPartial.cshtml" />
     <Content Include="Views\CurrentPanel\CurrentDuyurularPartial.cshtml" />
+    <Content Include="Views\ErrorPage\PageError.cshtml" />
+    <Content Include="Views\Category\CascadingProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

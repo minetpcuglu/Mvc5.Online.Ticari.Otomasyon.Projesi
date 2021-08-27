@@ -1,0 +1,63 @@
+﻿@model EntityLayer.Concrete.CascadingProduct
+@{
+    ViewBag.Title = "CascadingProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+
+    $(function () {
+
+        $('#DrpKtgr').change(function () {
+
+            var id = $('#DrpKtgr').val();
+
+            $.ajax({
+
+                url: '/Category/GetProduct',
+
+                data: { p: id },
+
+                type: "POST",
+
+                dataType: "Json",
+
+                success: function (data) {
+
+                    console.log(data);
+
+                    $('#DrpUrun').empty();
+
+                    for (var i = 0; i < data.length; i++) {
+
+                        $('#DrpUrun').append("<option value='" + data[i].Value + "'>" + data[i].Text + "</Option>");
+
+                    }
+
+                }
+
+            });
+
+        });
+
+    });
+
+</script>
+
+
+<br />
+<div>
+    <h2>Kategoriler - Ürünler</h2>
+</div>
+<br />
+<div>
+    @Html.Label("Kategoriler")<br />
+    @Html.DropDownList("DrpKtgr", Model.category, "....Kategori Seçiniz...", new { @class = "form-control" })
+    <br />
+    <br />
+    @Html.Label("Ürünler")<br />
+    @Html.DropDownList("DrpUrun", Model.product, "....Ürün Seçiniz...", new { @class = "form-control" })
+    <br />
+    <br />
+</div>
