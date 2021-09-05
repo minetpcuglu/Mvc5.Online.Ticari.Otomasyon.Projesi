@@ -2945,6 +2945,7 @@
     <Content Include="Views\CurrentPanel\CurrentDuyurularPartial.cshtml" />
     <Content Include="Views\ErrorPage\PageError.cshtml" />
     <Content Include="Views\Category\CascadingProduct.cshtml" />
+    <Content Include="Views\Bill\DinamicBill.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

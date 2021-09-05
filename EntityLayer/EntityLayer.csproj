@@ -72,6 +72,7 @@
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Current.cs" />
     <Compile Include="Concrete\Departmant.cs" />
+    <Compile Include="Concrete\DinamicBillDTO.cs" />
     <Compile Include="Concrete\Employee.cs" />
     <Compile Include="Concrete\Expense.cs" />
     <Compile Include="Concrete\Message.cs" />

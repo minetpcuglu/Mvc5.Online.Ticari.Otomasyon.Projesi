@@ -50,5 +50,7 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
             return RedirectToAction("Index");
 
         }
+
+     
     }
 }

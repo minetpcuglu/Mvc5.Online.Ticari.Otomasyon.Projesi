@@ -15,6 +15,7 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
     {
         // GET: Bill
         BillManager BM = new BillManager(new EfBillDal());
+        BillPenManager BpM = new BillPenManager(new EfBillPenDal());
         public ActionResult Index(int sayfa = 1)
         {
             var deger = BM.GetList().ToPagedList(sayfa, 8);
@@ -50,7 +51,32 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult DinamicBill()
+        {
+            DinamicBillDTO db = new DinamicBillDTO();
+            db.bills = BM.GetList();
+            db.billPens = BpM.GetList();
+            return View(db);
+        }
 
+        public ActionResult SaveBill(string FaturaSeriNo ,string Faturasırano , DateTime date,string VergiDairesi,string saat,string TeslimEden , string TeslimAlan,string Toplam, 
+            BillPen[] billPens)
+        {
+            Bill b = new Bill();
+            b.BillSerialNo = FaturaSeriNo;
+            b.BillSıraNo = Faturasırano;
+            b.Date = date;
+            b.TaxAdministration = VergiDairesi;
+            b.Hour = saat;
+            b.Deliveryarea = TeslimAlan;
+            b.Submitter = TeslimEden;
+            b.Totel = decimal.Parse( Toplam);
+
+            BM.BillAdd(b);
+
+           
+            return Json("İşlem Başarılı",JsonRequestBehavior.AllowGet);
+        }
 
 
 
