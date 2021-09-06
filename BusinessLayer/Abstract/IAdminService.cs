@@ -18,5 +18,6 @@ namespace BusinessLayer.Abstract
 
         void UpdateAdmin(Admin admin); 
         Admin  GetAdmin(string username, string password);
+        Admin GetByName(String name);
     }
 }

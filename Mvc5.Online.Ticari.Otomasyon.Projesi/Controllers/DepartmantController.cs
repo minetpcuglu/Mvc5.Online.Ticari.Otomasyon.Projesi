@@ -40,7 +40,9 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
         }
 
 
+        [Authorize(Roles = "A")]
         [HttpPost]
+
         public ActionResult DepartmantAdd(Departmant d)
         {
             ValidationResult result = rules.Validate(d);

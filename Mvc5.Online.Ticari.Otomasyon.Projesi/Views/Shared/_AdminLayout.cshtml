@@ -53,10 +53,13 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-flask"></i></div>
                             Ürünler
                         </a>
-                        <a class="nav-link" href="/Departmant/Index">
-                            <div class="sb-nav-link-icon"><i class="fas fa-bars"></i></div>
-                            Departmanlar
-                        </a>
+                        @if (User.IsInRole("A"))
+                        {
+                            <a class="nav-link" href="/Departmant/Index">
+                                <div class="sb-nav-link-icon"><i class="fas fa-bars"></i></div>
+                                Departmanlar
+                            </a>
+                        }
                         <a class="nav-link" href="/Current/Index/">
                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                             Cariler
