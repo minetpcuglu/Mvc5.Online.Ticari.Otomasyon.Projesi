@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using PagedList;
@@ -16,6 +17,7 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
         // GET: Bill
         BillManager BM = new BillManager(new EfBillDal());
         BillPenManager BpM = new BillPenManager(new EfBillPenDal());
+        Context c = new Context();
         public ActionResult Index(int sayfa = 1)
         {
             var deger = BM.GetList().ToPagedList(sayfa, 8);
@@ -46,7 +48,7 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
         [HttpPost]
         public ActionResult UpdateBillPage(Bill d)
         {
-           
+
             BM.UpdateBill(d);
             return RedirectToAction("Index");
         }
@@ -59,23 +61,38 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
             return View(db);
         }
 
-        public ActionResult SaveBill(string FaturaSeriNo ,string Faturasırano , DateTime date,string VergiDairesi,string saat,string TeslimEden , string TeslimAlan,string Toplam, 
+        public ActionResult SaveBill(string BillSerialNo, string BillSıraNo, DateTime Date, string TaxAdministration, string Hour, string Deliveryarea, string Submitter, string Totel,
             BillPen[] billPens)
         {
             Bill b = new Bill();
-            b.BillSerialNo = FaturaSeriNo;
-            b.BillSıraNo = Faturasırano;
-            b.Date = date;
-            b.TaxAdministration = VergiDairesi;
-            b.Hour = saat;
-            b.Deliveryarea = TeslimAlan;
-            b.Submitter = TeslimEden;
-            b.Totel = decimal.Parse( Toplam);
+            b.BillSerialNo = BillSerialNo;
+            b.BillSıraNo = BillSıraNo;
+            b.Date = Date;
+            b.TaxAdministration = TaxAdministration;
+            b.Hour = Hour;
+            b.Deliveryarea = Deliveryarea;
+            b.Submitter = Submitter;
+            b.Totel = decimal.Parse(Totel);
+            c.Bills.Add(b);
 
-            BM.BillAdd(b);
+            foreach (var x in billPens)
+
+            {
+                BillPen bp = new BillPen();
+                bp.Description = x.Description;
+                bp.UnitPrice = x.UnitPrice;
+                bp.Piece = x.Piece;
+                bp.BillId= x.BillPenId;
+                bp.Amount = x.Amount;
+                c.BillPens.Add(bp);
+                
+            }
+            c.SaveChanges();
 
            
-            return Json("İşlem Başarılı",JsonRequestBehavior.AllowGet);
+
+
+            return Json("İşlem Başarılı", JsonRequestBehavior.AllowGet);
         }
 
 

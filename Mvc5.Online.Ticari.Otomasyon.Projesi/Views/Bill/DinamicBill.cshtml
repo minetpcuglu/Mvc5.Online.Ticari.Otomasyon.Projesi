@@ -236,7 +236,7 @@
 
                             <div class="col-md-4">
 
-                                <input type="text" id="Hour" name="Hour" placeholder=" Saat" class="form-control" />
+                                <input type="time" id="Hour" name="Hour" placeholder=" Saat" class="form-control" />
 
                             </div>
                         </div>
@@ -508,7 +508,7 @@
 
                     UnitPrice: $(this).find('td:eq(2)').html(),
 
-                /*    tut: $(this).find('td:eq(3)').html()*/
+                    Amount: $(this).find('td:eq(3)').html()
 
                 });
 
@@ -533,7 +533,7 @@
                
                 Totel: $("#Totel").val(),
 
-                order: orderArr
+                billPens: orderArr
 
             });
 
