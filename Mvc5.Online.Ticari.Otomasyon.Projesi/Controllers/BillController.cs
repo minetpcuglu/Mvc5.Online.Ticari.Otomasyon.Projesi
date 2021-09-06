@@ -56,8 +56,8 @@ namespace Mvc5.Online.Ticari.Otomasyon.Projesi.Controllers
         public ActionResult DinamicBill()
         {
             DinamicBillDTO db = new DinamicBillDTO();
-            db.bills = BM.GetList();
-            db.billPens = BpM.GetList();
+            db.bills = c.Bills.ToList();
+            db.billPens = c.BillPens.ToList();
             return View(db);
         }
 
