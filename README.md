@@ -4,7 +4,7 @@
 
 *Entity Framework (CodeFirst) *Authorize *FluentValidation *N Katmanlı Mimari * DesingPattern(GenericRepository) *Extension Method *Sql Linq Sorguları *Css *JavaScript *Html kullanmış bulunmaktayım ve aşağıda projemle alakalı bazı görseller mevcuttur.
 
-# Projeden Personel Girişi Görseller
+#  Personel Girişi Görseller
 
 #![1](https://user-images.githubusercontent.com/77547699/132734316-f788e7fa-c0e9-46a4-bc20-b1b8463cb8bc.png)
 
@@ -64,10 +64,10 @@
 
 ![a8](https://user-images.githubusercontent.com/77547699/132735225-bf9468fc-c16d-488c-ab75-e857d75b741b.png)
 
-#########
 
-# Bitirme Sertifikası 
 
-#########
+# Bitirme Sertifikası #
 
-[sertifika.pdf](https://github.com/minetpcuglu/Mvc5.Online.Ticari.Otomasyon.Projesi/files/7138665/sertifika.pdf)
+
+![sertif](https://user-images.githubusercontent.com/77547699/132735828-608c25d3-e56b-4cc0-a60b-8a6a9130bf78.png)
+
